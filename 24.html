@@ -1,0 +1,385 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0;">
+
+<div id="jpedal" style="overflow: hidden; position:relative; width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load24();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_24{left:115px;top:216px;}
+#t2_24{left:196px;top:264px;}
+#t3_24{left:232px;top:264px;}
+#t4_24{left:345px;top:264px;}
+#t5_24{left:196px;top:284px;}
+#t6_24{left:196px;top:304px;}
+#t7_24{left:196px;top:324px;}
+#t8_24{left:196px;top:344px;}
+#t9_24{left:82px;top:373px;}
+#ta_24{left:82px;top:393px;}
+#tb_24{left:92px;top:393px;}
+#tc_24{left:99px;top:393px;}
+#td_24{left:246px;top:393px;}
+#te_24{left:82px;top:414px;}
+#tf_24{left:82px;top:434px;}
+#tg_24{left:92px;top:434px;}
+#th_24{left:457px;top:434px;}
+#ti_24{left:511px;top:434px;}
+#tj_24{left:92px;top:455px;}
+#tk_24{left:285px;top:455px;}
+#tl_24{left:419px;top:455px;}
+#tm_24{left:82px;top:475px;}
+#tn_24{left:82px;top:496px;}
+#to_24{left:82px;top:516px;}
+#tp_24{left:92px;top:516px;}
+#tq_24{left:83px;top:614px;}
+#tr_24{left:83px;top:635px;}
+#ts_24{left:83px;top:655px;}
+#tt_24{left:83px;top:675px;}
+#tu_24{left:83px;top:696px;}
+#tv_24{left:83px;top:717px;}
+#tw_24{left:83px;top:738px;}
+#tx_24{left:83px;top:758px;}
+#ty_24{left:83px;top:778px;}
+#tz_24{left:83px;top:798px;}
+#t10_24{left:83px;top:818px;}
+#t11_24{left:83px;top:839px;}
+#t12_24{left:83px;top:860px;}
+#t13_24{left:83px;top:881px;}
+#t14_24{left:83px;top:1003px;}
+#t15_24{left:97px;top:1003px;}
+#t16_24{left:83px;top:1024px;}
+#t17_24{left:83px;top:1045px;}
+#t18_24{left:97px;top:1045px;}
+#t19_24{left:258px;top:1045px;}
+#t1a_24{left:92px;top:1065px;}
+#t1b_24{left:97px;top:1065px;}
+#t1c_24{left:100px;top:1065px;}
+#t1d_24{left:83px;top:1086px;}
+#t1e_24{left:171px;top:1086px;}
+#t1f_24{left:83px;top:1106px;}
+#t1g_24{left:83px;top:1127px;}
+#t1h_24{left:100px;top:1127px;}
+#t1i_24{left:348px;top:1127px;}
+#t1j_24{left:83px;top:1148px;}
+#t1k_24{left:194px;top:1148px;}
+#t1l_24{left:83px;top:1168px;}
+#t1m_24{left:83px;top:1189px;}
+#t1n_24{left:97px;top:1189px;}
+#t1o_24{left:83px;top:1209px;}
+#t1p_24{left:115px;top:573px;}
+#t1q_24{left:115px;top:919px;}
+#t1r_24{left:89px;top:967px;}
+#t1s_24{left:84px;top:136px;}
+#t1t_24{left:82px;top:152px;}
+#t1u_24{left:122px;top:1252px;}
+#t1v_24{left:228px;top:1252px;}
+#t1w_24{left:84px;top:1251px;}
+#t1x_24{left:445px;top:54px;}
+#t1y_24{left:570px;top:84px;}
+#t1z_24{left:82px;top:56px;}
+
+.s8_24{
+	FONT-SIZE: 50px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide24;
+	color: rgb(77,74,75);
+}
+
+.s1_24{
+	FONT-SIZE: 97px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide24;
+	color: rgb(33,29,29);
+}
+
+.s11_24{
+	FONT-SIZE: 103px;
+	FONT-FAMILY: RLXZZY-OpenSans-Bold-Identity24;
+	color: rgb(255,255,255);
+}
+
+.s9_24{
+	FONT-SIZE: 54px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Iden24;
+	color: rgb(77,74,75);
+}
+
+.s5_24{
+	FONT-SIZE: 68px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide24;
+	color: rgb(255,255,255);
+}
+
+.s3_24{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ODLDAU-MyriadPro-Bold-Identit24;
+	color: rgb(33,29,29);
+}
+
+.s4_24{
+	FONT-SIZE: 58px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide24;
+	color: rgb(77,74,75);
+}
+
+.s10_24{
+	FONT-SIZE: 97px;
+	FONT-FAMILY: BQZQCD-Humanist521BT-Roman-Id24;
+	color: rgb(33,29,29);
+}
+
+.s6_24{
+	FONT-SIZE: 122px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide24;
+	color: rgb(255,255,255);
+}
+
+.s7_24{
+	FONT-SIZE: 50px;
+	FONT-FAMILY: TYFSDB-OpenSans-Light-Identit24;
+	color: rgb(77,74,75);
+}
+
+.s2_24{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Iden24;
+	color: rgb(33,29,29);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts24" type="text/css" >
+
+@font-face {
+	font-family: BQZQCD-Humanist521BT-Roman-Id24;
+	src :url("24/fonts/BQZQCD-Humanist521BT-Roman-Id.woff") format("woff");
+}
+
+@font-face {
+	font-family: RLXZZY-OpenSans-Bold-Identity24;
+	src :url("24/fonts/RLXZZY-OpenSans-Bold-Identity.woff") format("woff");
+}
+
+@font-face {
+	font-family: CBLQMD-OpenSans-Extrabold-Ide24;
+	src :url("24/fonts/CBLQMD-OpenSans-Extrabold-Ide.woff") format("woff");
+}
+
+@font-face {
+	font-family: ODLDAU-MyriadPro-Bold-Identit24;
+	src :url("24/fonts/ODLDAU-MyriadPro-Bold-Identit.woff") format("woff");
+}
+
+@font-face {
+	font-family: STQLMZ-MyriadPro-Regular-Iden24;
+	src :url("24/fonts/STQLMZ-MyriadPro-Regular-Iden.woff") format("woff");
+}
+
+@font-face {
+	font-family: TYFSDB-OpenSans-Light-Identit24;
+	src :url("24/fonts/TYFSDB-OpenSans-Light-Identit.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_24" class="t s1_24">&amp;ODXVXUD GHO DFWR HOHFWRUDO</div>
+<div id="t2_24" class="t s2_24">!"4)$"</div>
+<div id="t3_24" class="t s3_24">_`;@@*,2*C$2%&amp;</div>
+<div id="t4_24" class="t s2_24">"$&amp;"6&amp;00)09"&amp;4")66&amp;$+")4"&amp;$%):4&amp;6*2*&amp;-%+&lt;"</div>
+<div id="t5_24" class="t s2_24">/&amp;02*%*&amp;-'+"&gt;3&amp;";+%&amp;-"4+$"&amp;4&amp;6%+0&amp;$"&gt;3&amp;"&amp;$%R-"),3)0')-'+5"</div>
+<div id="t6_24" class="t s2_24">M4"&amp;$603%*-*+"-3-6)"$&amp;"*-*6*)09")-%&amp;$"'&amp;"4)$"CaODD&lt;")@-"63)-'+"</div>
+<div id="t7_24" class="t s2_24">(3:*&amp;0)";+%)'+"4)"%+%)4*')'"'&amp;"4+$"&amp;4&amp;6%+0&amp;$"*-$60*/%+$"&amp;-"&amp;$)"</div>
+<div id="t8_24" class="t s2_24">2&amp;$)5</div>
+<div id="t9_24" class="t s2_24">N&amp;$/3R$"'&amp;"&gt;3&amp;"()=)";+%)'+"&amp;4"@4%*2+"&amp;4&amp;6%+0&lt;"3$%&amp;'"'&amp;:&amp;09O</div>
+<div id="ta_24" class="t s3_24">_</div>
+<div id="tb_24" class="t s2_24">5"</div>
+<div id="tc_24" class="t s3_24">L+1&gt;+'*,2*,0*C+)'=2</div>
+<div id="td_24" class="t s2_24">"d"6+-":+41,0)B+"'&amp;"%*-%)"-&amp;,0)d"4+$"-+2:0&amp;$"'&amp;</div>
+<div id="te_24" class="t s2_24">&gt;3*&amp;-&amp;$"GU"()=)-"*'+")";+%)05</div>
+<div id="tf_24" class="t s3_24">7</div>
+<div id="tg_24" class="t s2_24">5"F+-%)0"&amp;4"-@2&amp;0+"'&amp;";+%)-%&amp;$"=")$&amp;-%)04+")4"/*&amp;"'&amp;4"</div>
+<div id="th_24" class="t s3_24">3+)'=2</div>
+<div id="ti_24" class="t s2_24">5</div>
+<div id="tj_24" class="t s2_24">5"!$&amp;-%)0"&amp;$%&amp;"-@2&amp;0+"&amp;-"&amp;4"</div>
+<div id="tk_24" class="t s3_24">"1%+*),*/-1'$%(2(&amp;</div>
+<div id="tl_24" class="t s2_24">&lt;"&amp;-"&amp;4"&amp;$/)6*+"&gt;3&amp;"*-'*6)"</div>
+<div id="tm_24" class="t s2_24">hF)-%*')'"'&amp;"6*3')')-+$"&gt;3&amp;"()-";+%)'+i&lt;"$*%3)'+"&amp;-"&amp;4"&amp;K%0&amp;2+"$3/&amp;0*+0"</div>
+<div id="tn_24" class="t s2_24">'&amp;0&amp;6(+5</div>
+<div id="to_24" class="t s3_24">D</div>
+<div id="tp_24" class="t s2_24">5"V&amp;,*$%0)0"&amp;4"2*$2+"-@2&amp;0+"&amp;-"&amp;4"F&amp;0%*?6)'+"'&amp;"M$603%*-*+"="&amp;-"&amp;4"^&amp;4&amp;,0)2)</div>
+<div id="tq_24" class="t s2_24">L3&amp;,+"'&amp;4"6*&amp;00&amp;"'&amp;4")6%+"&amp;4&amp;6%+0)4&lt;"3$%&amp;'"'&amp;:&amp;09"%0)$4)')0$&amp;")4"63)0E</div>
+<div id="tr_24" class="t s2_24">%+"+$630+"6+-"$3"$3/4&amp;-%&amp;"="4+$"?$6)4&amp;$"/)0)"&amp;B&amp;6%3)0"&amp;4"&amp;$603%*-*+"'&amp;"</div>
+<div id="ts_24" class="t s2_24">4)"2&amp;$)5"I)0)"&amp;4":3&amp;-"'&amp;$)00+44+"'&amp;4"&amp;$603%*-*+&lt;"&amp;$"*2/+0%)-%&amp;"&gt;3&amp;"</div>
+<div id="tt_24" class="t s2_24">%&amp;-,)"&amp;-"63&amp;-%)"&gt;3&amp;O</div>
+<div id="tu_24" class="t s3_24">R*M-%,)*,-*0+*X2(1+*+$%&amp;'()+)*]+1$0%+)+*C+'+*',+0(^+'*,0*,-1'$%(2(&amp;T</div>
+<div id="tv_24" class="t s3_24">R*f2(1+.,2%,*,0*-$C0,2%,*,-%B*&gt;+:(0(%+)&amp;*C+'+*+-(-%('0&amp;*,2*,-%+*</div>
+<div id="tw_24" class="t s3_24">%+',+T</div>
+<div id="tx_24" class="t s2_24">g"G+"'&amp;:&amp;"/&amp;02*%*0"&gt;3&amp;"-)'*&amp;"4+")/30&amp;"+"/0&amp;$*+-&amp;5</div>
+<div id="ty_24" class="t s2_24">g"!'&amp;29$"'&amp;"63$%+'*)0"&amp;4")66&amp;$+")4"&amp;$%):4&amp;6*2*&amp;-%+&lt;"&amp;4"/&amp;0$+-)4"'&amp;4"</div>
+<div id="tz_24" class="t s2_24">F+2)-'+"Q&amp;-&amp;0)4"M4&amp;6%+0)4"'&amp;:&amp;"%)2:*R-",)0)-%*H)0"&gt;3&amp;"&amp;4"&amp;$603E</div>
+<div id="t10_24" class="t s2_24">%*-*+"$&amp;"6&amp;4&amp;:0&amp;"&amp;-"+0'&amp;-5</div>
+<div id="t11_24" class="t s3_24">R*F&amp;-*U-1+0,-*C',-,21(+2*,0*+1%&amp;Q*]&amp;'.$0+2*&amp;:-,'W+1(&amp;2,-*&amp;*',1$Z</div>
+<div id="t12_24" class="t s3_24">'',2*0+*1+0(U1+1(=2*),*0&amp;-*W&amp;%&amp;-Q*C,'&amp;*2&amp;*),:,2*',+0(^+'*2(25$2+*</div>
+<div id="t13_24" class="t s3_24">%+',+*),0*,-1'$%(2(&amp;T</div>
+<div id="t14_24" class="t s3_24">_T</div>
+<div id="t15_24" class="t s2_24">"Q3)0')0"4)$":+4&amp;%)$"="$+:0&amp;$"&gt;3&amp;"GU"B3&amp;0+-"3%*4*H)'+$"&amp;-"&amp;4"$+:0&amp;"</div>
+<div id="t16_24" class="t s2_24">2)008-5</div>
+<div id="t17_24" class="t s3_24">7T</div>
+<div id="t18_24" class="t s2_24">"!:0*0"4)"30-)&lt;"&amp;K%0)&amp;0"="</div>
+<div id="t19_24" class="t s3_24">1&amp;2%+'*0&amp;-*-&amp;:',-*),*W&amp;%+1(=2T</div>
+<div id="t1a_24" class="t s3_24">T</div>
+<div id="t1b_24" class="t s2_24">"</div>
+<div id="t1c_24" class="t s3_24">A&amp;.C+'+'*,0*',-$0%+)&amp;*),0*1&amp;2%,&amp;*),*-&amp;:',-*1&amp;2*,0*2X.,'&amp;*</div>
+<div id="t1d_24" class="t s3_24">),*W&amp;%+2%,-</div>
+<div id="t1e_24" class="t s2_24">"S&gt;3&amp;"=)"0&amp;,*$%08"&amp;-"&amp;4"/)'08-&lt;"&amp;-"&amp;4"!6%)&lt;"&amp;-"&amp;4"F&amp;0%*?E</div>
+<div id="t1f_24" class="t s2_24">6)'+"="&amp;-"^&amp;4&amp;,0)2)T5</div>
+<div id="t1g_24" class="t s3_24">DT*</div>
+<div id="t1h_24" class="t s2_24">V&amp;,*$%0)0"&amp;-"&amp;4"!6%)"'&amp;"M$603%*-*+"&amp;4"</div>
+<div id="t1i_24" class="t s3_24">2X.,'&amp;*),*-&amp;:',-*Y$,*-,*</div>
+<div id="t1j_24" class="t s3_24">-+1=*),*0+*$'2+</div>
+<div id="t1k_24" class="t s2_24">"=&lt;"$*"6+00&amp;$/+-'*&amp;0&amp;&lt;"4)"'*B&amp;0&amp;-6*)"6+-"4)"6)-%*')'"</div>
+<div id="t1l_24" class="t s2_24">'&amp;";+%)-%&amp;$5</div>
+<div id="t1m_24" class="t s3_24">8T</div>
+<div id="t1n_24" class="t s2_24">"!$&amp;-%)0"&amp;4"2*$2+"-@2&amp;0+"&amp;-"&amp;4"F&amp;0%*?6)'+"'&amp;"M$603%*-*+"="&amp;-"</div>
+<div id="t1o_24" class="t s2_24">&amp;4"^&amp;4&amp;,0)2)5</div>
+<div id="t1p_24" class="t s1_24">(VFUXWLQLR GH OD PHVD</div>
+<div id="t1q_24" class="t s1_24">$SHUWXUD GH OD XUQD</div>
+<div id="t1r_24" class="t s4_24">$ FRQWLQXDFLµQ XVWHG GHEHU£±</div>
+<div id="t1s_24" class="t s5_24">(OHFFLRQHV</div>
+<div id="t1t_24" class="t s6_24">*(1(5$/(6</div>
+<div id="t1u_24" class="t s7_24">(/(&amp;&amp;Ζ21(6 ±²³´</div>
+<div id="t1v_24" class="t s8_24">0$18$/ (/(&amp;725$/ 3$5$ $8725Ζ'$'(6 '( 0(6$</div>
+<div id="t1w_24" class="t s9_24">cP</div>
+<div id="t1x_24" class="t s10_24">&amp;/$8685$ '(/ $&amp;72 (/(&amp;725$/ &lt;</div>
+<div id="t1y_24" class="t s10_24">(6&amp;587,1,2 '( /$ 0(6$</div>
+<div id="t1z_24" class="t s11_24">6HFFLµQ ±</div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg24Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg24"><object width="909" height="1286" data="24/24.svg" type="image/svg+xml" id="pdf24" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld24" type="text/javascript">
+
+var isIE = false;
+var f24 = [['t1_24',1344],['t1p_24',1069],['t1q_24',985],['t1r_24',875],['t1u_24',412],['t1v_24',1281],['t1x_24',1603],['t1y_24',1103],['t1z_24',477]];
+function load24(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f24);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 72;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_24");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0;">
+
+<div id="jpedal" style="overflow: hidden; position:relative; width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load13();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_13{left:113px;top:154px;}
+#t2_13{left:113px;top:577px;}
+#t3_13{left:95px;top:521px;}
+#t4_13{left:95px;top:533px;}
+#t5_13{left:588px;top:337px;}
+#t6_13{left:589px;top:521px;}
+#t7_13{left:589px;top:533px;}
+#t8_13{left:76px;top:614px;}
+#t9_13{left:80px;top:636px;}
+#ta_13{left:89px;top:636px;}
+#tb_13{left:92px;top:636px;}
+#tc_13{left:76px;top:636px;}
+#td_13{left:83px;top:636px;}
+#te_13{left:76px;top:656px;}
+#tf_13{left:76px;top:697px;}
+#tg_13{left:83px;top:697px;}
+#th_13{left:89px;top:697px;}
+#ti_13{left:76px;top:717px;}
+#tj_13{left:76px;top:737px;}
+#tk_13{left:76px;top:778px;}
+#tl_13{left:89px;top:778px;}
+#tm_13{left:92px;top:778px;}
+#tn_13{left:80px;top:778px;}
+#to_13{left:83px;top:778px;}
+#tp_13{left:76px;top:799px;}
+#tq_13{left:76px;top:819px;}
+#tr_13{left:76px;top:860px;}
+#ts_13{left:92px;top:860px;}
+#tt_13{left:83px;top:860px;}
+#tu_13{left:76px;top:881px;}
+#tv_13{left:158px;top:881px;}
+#tw_13{left:76px;top:901px;}
+#tx_13{left:407px;top:901px;}
+#ty_13{left:80px;top:942px;}
+#tz_13{left:89px;top:942px;}
+#t10_13{left:96px;top:942px;}
+#t11_13{left:76px;top:942px;}
+#t12_13{left:76px;top:963px;}
+#t13_13{left:76px;top:983px;}
+#t14_13{left:76px;top:1003px;}
+#t15_13{left:76px;top:1023px;}
+#t16_13{left:76px;top:1064px;}
+#t17_13{left:92px;top:1064px;}
+#t18_13{left:83px;top:1064px;}
+#t19_13{left:76px;top:1084px;}
+#t1a_13{left:76px;top:1105px;}
+#t1b_13{left:82px;top:57px;}
+#t1c_13{left:727px;top:55px;}
+#t1d_13{left:386px;top:1252px;}
+#t1e_13{left:493px;top:1252px;}
+#t1f_13{left:833px;top:1251px;}
+
+.s1_13{
+	FONT-SIZE: 97px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide13;
+	color: rgb(33,29,29);
+}
+
+.s9_13{
+	FONT-SIZE: 103px;
+	FONT-FAMILY: RLXZZY-OpenSans-Bold-Identity13;
+	color: rgb(255,255,255);
+}
+
+.s5_13{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ODLDAU-MyriadPro-Bold-Identit13;
+	color: rgb(73,183,72);
+}
+
+.s7_13{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Iden13;
+	color: rgb(42,171,225);
+}
+
+.s8_13{
+	FONT-SIZE: 97px;
+	FONT-FAMILY: BQZQCD-Humanist521BT-Roman-Id13;
+	color: rgb(33,29,29);
+}
+
+.s4_13{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ODLDAU-MyriadPro-Bold-Identit13;
+	color: rgb(33,29,29);
+}
+
+.s12_13{
+	FONT-SIZE: 54px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Iden13;
+	color: rgb(77,74,75);
+}
+
+.s10_13{
+	FONT-SIZE: 50px;
+	FONT-FAMILY: TYFSDB-OpenSans-Light-Identit13;
+	color: rgb(77,74,75);
+}
+
+.s11_13{
+	FONT-SIZE: 50px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide13;
+	color: rgb(77,74,75);
+}
+
+.s3_13{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Iden13;
+	color: rgb(33,29,29);
+}
+
+.s6_13{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ODLDAU-MyriadPro-Bold-Identit13;
+	color: rgb(42,171,225);
+}
+
+.s2_13{
+	FONT-SIZE: 40px;
+	FONT-FAMILY: TYFSDB-OpenSans-Light-Identit13;
+	color: rgb(33,29,29);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts13" type="text/css" >
+
+@font-face {
+	font-family: BQZQCD-Humanist521BT-Roman-Id13;
+	src :url("13/fonts/BQZQCD-Humanist521BT-Roman-Id.woff") format("woff");
+}
+
+@font-face {
+	font-family: RLXZZY-OpenSans-Bold-Identity13;
+	src :url("13/fonts/RLXZZY-OpenSans-Bold-Identity.woff") format("woff");
+}
+
+@font-face {
+	font-family: CBLQMD-OpenSans-Extrabold-Ide13;
+	src :url("13/fonts/CBLQMD-OpenSans-Extrabold-Ide.woff") format("woff");
+}
+
+@font-face {
+	font-family: ODLDAU-MyriadPro-Bold-Identit13;
+	src :url("13/fonts/ODLDAU-MyriadPro-Bold-Identit.woff") format("woff");
+}
+
+@font-face {
+	font-family: STQLMZ-MyriadPro-Regular-Iden13;
+	src :url("13/fonts/STQLMZ-MyriadPro-Regular-Iden.woff") format("woff");
+}
+
+@font-face {
+	font-family: TYFSDB-OpenSans-Light-Identit13;
+	src :url("13/fonts/TYFSDB-OpenSans-Light-Identit.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_13" class="t s1_13">$UPDGR GH OD XUQD GH YRWDFLµQ</div>
+<div id="t2_13" class="t s1_13">+DELOLWDFLµQ GHO FXDUWR RVFXUR</div>
+<div id="t3_13" class="t s2_13">'HEHU£ DUPDU OD XUQD XWLOL]DQGR ORV DXWRDGKHVLYRV SURYLVWRV \ VLJXLHQGR ORV Q¼PHURV LPSUHVRV HQ ODV</div>
+<div id="t4_13" class="t s2_13">VRODSDV±</div>
+<div id="t5_13" class="t s2_13">9HULȴTXH TXH VH HQFXHQWUH WRWDOPHQWH YDF¯D±</div>
+<div id="t6_13" class="t s2_13">&amp;RORTXH OD IDMD GH VHJXULGDG \ SURFHGD D ȴUPDUOD</div>
+<div id="t7_13" class="t s2_13">MXQWR FRQ VX VXSOHQWH \ ORV ȴVFDOHV DFUHGLWDGRV±</div>
+<div id="t8_13" class="t s3_13">""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""</div>
+<div id="t9_13" class="t s3_13">"</div>
+<div id="ta_13" class="t s4_13">*</div>
+<div id="tb_13" class="t s3_13">"e):*4*%&amp;"&amp;4"63)0%+"+$630+"&amp;-"3-"0&amp;6*-%+"*-2&amp;'*)%+")"4)"</div>
+<div id="tc_13" class="t s5_13">*</div>
+<div id="td_13" class="t s6_13">R</div>
+<div id="te_13" class="t s3_13">""2&amp;$)"'&amp;"B96*4")66&amp;$+5</div>
+<div id="tf_13" class="t s3_13">"" "\)-%&amp;-,)"3-)"$+4)"/3&amp;0%)"3%*4*H):4&amp;5"F4)3$30&amp;"4)$"'&amp;E</div>
+<div id="tg_13" class="t s6_13">R</div>
+<div id="th_13" class="t s7_13">"</div>
+<div id="ti_13" class="t s3_13">""29$"/3&amp;0%)$"=";&amp;-%)-)$"6+-"4)$"B)J)$"+?6*)4&amp;$&lt;")-%&amp;"4)"/0&amp;E</div>
+<div id="tj_13" class="t s3_13">""$&amp;-6*)"'&amp;"4+$"?$6)4&amp;$"+"'&amp;"'+$"&amp;4&amp;6%+0&amp;$5</div>
+<div id="tk_13" class="t s3_13">"</div>
+<div id="tl_13" class="t s4_13">*</div>
+<div id="tm_13" class="t s3_13">"V&amp;%*0&amp;"+"63:0)"%+'+"6)0%&amp;4"+"*-$60*/6*8-"&gt;3&amp;"6+-%&amp;-,)"</div>
+<div id="tn_13" class="t s7_13">"</div>
+<div id="to_13" class="t s6_13">R</div>
+<div id="tp_13" class="t s3_13">""*-'*6)6*+-&amp;$"+"*29,&amp;-&amp;$"&gt;3&amp;"*2/4*&gt;3&amp;-"3-)"$3,&amp;0&amp;-6*)"</div>
+<div id="tq_13" class="t s3_13">"")4"&amp;4&amp;6%+0")";+%)0"&amp;-"3-"$&amp;-%*'+"'&amp;%&amp;02*-)'+5</div>
+<div id="tr_13" class="t s4_13">** *</div>
+<div id="ts_13" class="t s3_13">"F+-B0+-%&amp;"4)$":+4&amp;%)$"'&amp;"$3B0),*+"6+-"4+$"2+'&amp;4+$"+?E</div>
+<div id="tt_13" class="t s6_13">R</div>
+<div id="tu_13" class="t s3_13">""6*)4*H)'+$5"</div>
+<div id="tv_13" class="t s4_13">I,1$,'),*Y$,*2&amp;*),:,*),C&amp;-(%+'*0&amp;-*.&amp;Z</div>
+<div id="tw_13" class="t s4_13">**),0&amp;-*&amp;U1(+0(^+)&amp;-*),2%'&amp;*),0*1$+'%&amp;*&amp;-1$'&amp;</div>
+<div id="tx_13" class="t s3_13">5</div>
+<div id="ty_13" class="t s3_13">"</div>
+<div id="tz_13" class="t s4_13">**</div>
+<div id="t10_13" class="t s3_13">N&amp;/+$*%&amp;"4)$":+4&amp;%)$"'&amp;"$3B0),*+&lt;"+0'&amp;-9-'+4)$"/+0"</div>
+<div id="t11_13" class="t s6_13">* R</div>
+<div id="t12_13" class="t s3_13">""-@2&amp;0+"'&amp;"),03/)6*8-"S="6+4+0T&lt;"="+0'&amp;-")4B):R%*6+"'&amp;"</div>
+<div id="t13_13" class="t s3_13">""4)$"4&amp;%0)$"&gt;3&amp;"$*,3&amp;-")4"-@2&amp;0+&lt;"'&amp;"2&amp;-+0")"2)=+0"="'&amp;"</div>
+<div id="t14_13" class="t s3_13">""*H&gt;3*&amp;0')")"'&amp;0&amp;6()5"73"6+4+6)6*8-"="0&amp;/+$*6*8-"'&amp;:&amp;"</div>
+<div id="t15_13" class="t s3_13">""()6&amp;0$&amp;"'&amp;""B+02)",0)'3)45</div>
+<div id="t16_13" class="t s4_13">**</div>
+<div id="t17_13" class="t s3_13">"7*"%3;*&amp;0)"'3')$&lt;"0&amp;&gt;3*&amp;0)"4)")$*$%&amp;-6*)"'&amp;4"N&amp;4&amp;,)'+"'&amp;"</div>
+<div id="t18_13" class="t s6_13">R*</div>
+<div id="t19_13" class="t s3_13">""4)"`3$%*6*)"G)6*+-)4"M4&amp;6%+0)45</div>
+<div id="t1a_13" class="t s4_13">****</div>
+<div id="t1b_13" class="t s8_13">35(3$5$&amp;,Ð1 '(/ $&amp;72 (/(&amp;725$/</div>
+<div id="t1c_13" class="t s9_13">6HFFLµQ ±</div>
+<div id="t1d_13" class="t s10_13">(/(&amp;&amp;Ζ21(6 ²³´µ</div>
+<div id="t1e_13" class="t s11_13">0$18$/ (/(&amp;725$/ 3$5$ $8725Ζ'$'(6 '( 0(6$</div>
+<div id="t1f_13" class="t s12_13">Cf</div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg13Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg13"><object width="909" height="1286" data="13/13.svg" type="image/svg+xml" id="pdf13" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld13" type="text/javascript">
+
+var isIE = false;
+var f13 = [['t1_13',1544],['t2_13',1514],['t3_13',1856],['t5_13',818],['t6_13',898],['t7_13',868],['tf_13',1552],['tr_13',63],['t11_13',50],['t1b_13',1672],['t1c_13',477],['t1d_13',412],['t1e_13',1281]];
+function load13(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f13);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 52;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_13");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+</body>
+</html>

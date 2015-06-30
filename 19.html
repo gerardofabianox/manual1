@@ -1,0 +1,365 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0;">
+
+<div id="jpedal" style="overflow: hidden; position:relative; width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load19();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_19{left:113px;top:472px;}
+#t2_19{left:113px;top:929px;}
+#t3_19{left:89px;top:169px;}
+#t4_19{left:89px;top:250px;}
+#t5_19{left:89px;top:334px;}
+#t6_19{left:85px;top:762px;}
+#t7_19{left:85px;top:783px;}
+#t8_19{left:85px;top:803px;}
+#t9_19{left:85px;top:823px;}
+#ta_19{left:85px;top:843px;}
+#tb_19{left:85px;top:863px;}
+#tc_19{left:85px;top:884px;}
+#td_19{left:84px;top:967px;}
+#te_19{left:84px;top:987px;}
+#tf_19{left:84px;top:1007px;}
+#tg_19{left:84px;top:1048px;}
+#th_19{left:93px;top:1048px;}
+#ti_19{left:84px;top:1068px;}
+#tj_19{left:84px;top:1089px;}
+#tk_19{left:89px;top:1089px;}
+#tl_19{left:84px;top:1109px;}
+#tm_19{left:84px;top:1130px;}
+#tn_19{left:84px;top:1150px;}
+#to_19{left:84px;top:1170px;}
+#tp_19{left:84px;top:1190px;}
+#tq_19{left:84px;top:1210px;}
+#tr_19{left:97px;top:394px;}
+#ts_19{left:97px;top:414px;}
+#tt_19{left:83px;top:513px;}
+#tu_19{left:740px;top:513px;}
+#tv_19{left:743px;top:513px;}
+#tw_19{left:747px;top:513px;}
+#tx_19{left:810px;top:513px;}
+#ty_19{left:83px;top:533px;}
+#tz_19{left:83px;top:554px;}
+#t10_19{left:83px;top:575px;}
+#t11_19{left:89px;top:575px;}
+#t12_19{left:83px;top:595px;}
+#t13_19{left:83px;top:615px;}
+#t14_19{left:83px;top:635px;}
+#t15_19{left:83px;top:655px;}
+#t16_19{left:83px;top:676px;}
+#t17_19{left:85px;top:169px;}
+#t18_19{left:85px;top:190px;}
+#t19_19{left:85px;top:210px;}
+#t1a_19{left:85px;top:251px;}
+#t1b_19{left:106px;top:251px;}
+#t1c_19{left:497px;top:251px;}
+#t1d_19{left:85px;top:271px;}
+#t1e_19{left:85px;top:291px;}
+#t1f_19{left:85px;top:332px;}
+#t1g_19{left:509px;top:332px;}
+#t1h_19{left:85px;top:352px;}
+#t1i_19{left:85px;top:795px;}
+#t1j_19{left:728px;top:55px;}
+#t1k_19{left:84px;top:52px;}
+#t1l_19{left:84px;top:81px;}
+#t1m_19{left:386px;top:1252px;}
+#t1n_19{left:493px;top:1252px;}
+#t1o_19{left:833px;top:1251px;}
+#t1p_19{left:113px;top:711px;}
+
+.s1_19{
+	FONT-SIZE: 97px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide19;
+	color: rgb(33,29,29);
+}
+
+.s10_19{
+	FONT-SIZE: 50px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide19;
+	color: rgb(77,74,75);
+}
+
+.s8_19{
+	FONT-SIZE: 97px;
+	FONT-FAMILY: BQZQCD-Humanist521BT-Roman-Id19;
+	color: rgb(33,29,29);
+}
+
+.s3_19{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Iden19;
+	color: rgb(33,29,29);
+}
+
+.s7_19{
+	FONT-SIZE: 103px;
+	FONT-FAMILY: RLXZZY-OpenSans-Bold-Identity19;
+	color: rgb(255,255,255);
+}
+
+.s6_19{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Iden19;
+	color: rgb(33,29,29);
+}
+
+.s5_19{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Iden19;
+	color: rgb(255,255,255);
+}
+
+.s9_19{
+	FONT-SIZE: 50px;
+	FONT-FAMILY: TYFSDB-OpenSans-Light-Identit19;
+	color: rgb(77,74,75);
+}
+
+.s4_19{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ODLDAU-MyriadPro-Bold-Identit19;
+	color: rgb(33,29,29);
+}
+
+.s11_19{
+	FONT-SIZE: 54px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Iden19;
+	color: rgb(77,74,75);
+}
+
+.s2_19{
+	FONT-SIZE: 51px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide19;
+	color: rgb(255,255,255);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts19" type="text/css" >
+
+@font-face {
+	font-family: BQZQCD-Humanist521BT-Roman-Id19;
+	src :url("19/fonts/BQZQCD-Humanist521BT-Roman-Id.woff") format("woff");
+}
+
+@font-face {
+	font-family: RLXZZY-OpenSans-Bold-Identity19;
+	src :url("19/fonts/RLXZZY-OpenSans-Bold-Identity.woff") format("woff");
+}
+
+@font-face {
+	font-family: CBLQMD-OpenSans-Extrabold-Ide19;
+	src :url("19/fonts/CBLQMD-OpenSans-Extrabold-Ide.woff") format("woff");
+}
+
+@font-face {
+	font-family: ODLDAU-MyriadPro-Bold-Identit19;
+	src :url("19/fonts/ODLDAU-MyriadPro-Bold-Identit.woff") format("woff");
+}
+
+@font-face {
+	font-family: STQLMZ-MyriadPro-Regular-Iden19;
+	src :url("19/fonts/STQLMZ-MyriadPro-Regular-Iden.woff") format("woff");
+}
+
+@font-face {
+	font-family: TYFSDB-OpenSans-Light-Identit19;
+	src :url("19/fonts/TYFSDB-OpenSans-Light-Identit.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_19" class="t s1_19">$FFHVLELOLGDG (OHFWRUDO</div>
+<div id="t2_19" class="t s1_19">ΖQVSHFFLµQ GHO FXDUWR RVFXUR</div>
+<div id="t3_19" class="t s2_19">±</div>
+<div id="t4_19" class="t s2_19">²</div>
+<div id="t5_19" class="t s2_19">³</div>
+<div id="t6_19" class="t s3_19">^+'+"&amp;4&amp;6%+0"6+-"'*$6)/)6*')'";*$3)4"+")4,3-)"4*2*%)6*8-"/&amp;02)E</div>
+<div id="t7_19" class="t s3_19">-&amp;-%&amp;"+"%0)-$*%+0*)"&gt;3&amp;"'*?634%&amp;"4)"&amp;2*$*8-"'&amp;4";+%+&lt;"/3&amp;'&amp;"+/%)0"/+0"</div>
+<div id="t8_19" class="t s3_19">$3B0),)0"6+-"4)")$*$%&amp;-6*)"'&amp;4"/0&amp;$*'&amp;-%&amp;"'&amp;"2&amp;$)"+"'&amp;"3-)"/&amp;0$+-)"</div>
+<div id="t9_19" class="t s3_19">'&amp;"$3"6+-?)-H)&lt;"4)"&gt;3&amp;"'&amp;:&amp;09")60&amp;'*%)0"$3"*'&amp;-%*')'5""</div>
+<div id="ta_19" class="t s3_19">M-"&amp;$%&amp;"6)$+&lt;"#'5"'&amp;:&amp;09"0&amp;,*$%0)0"4+$"')%+$"'&amp;4")6+2/)A)-%&amp;"&amp;-"&amp;4"</div>
+<div id="tb_19" class="t s3_19">&amp;$/)6*+"'&amp;"+:$&amp;0;)6*+-&amp;$"'&amp;4"/)'08-"="/&amp;02*%*04&amp;"&amp;4")66&amp;$+")4"63)0%+"</div>
+<div id="tc_19" class="t s3_19">+$630+5"</div>
+<div id="td_19" class="t s3_19">#$%&amp;'"&amp;$"&amp;4"&amp;-6)0,)'+"'&amp;"&amp;K)2*-)0"&amp;4"63)0%+"+$630+&lt;")"/&amp;'*'+"'&amp;"</div>
+<div id="te_19" class="t s3_19">4+$"?$6)4&amp;$"+"63)-'+"4+"&amp;$%*2&amp;"-&amp;6&amp;$)0*+&lt;"/)0)")$&amp;,30)0$&amp;"'&amp;"&gt;3&amp;"</div>
+<div id="tf_19" class="t s3_19">$&amp;"&amp;-63&amp;-%0&amp;"&amp;-"6+-'*6*+-&amp;$5"I)0)"&amp;44+&lt;"6+2/0+:)09"&gt;3&amp;O</div>
+<div id="tg_19" class="t s4_19">R*</div>
+<div id="th_19" class="t s3_19">"L)$";&amp;-%)-)$"="/3&amp;0%)$"&amp;$%R-"64)3$30)')$&lt;")"&amp;K6&amp;/6*8-"'&amp;"4)"/3&amp;0%)"</div>
+<div id="ti_19" class="t s3_19">'&amp;")66&amp;$+5</div>
+<div id="tj_19" class="t s4_19">R</div>
+<div id="tk_19" class="t s3_19">""M-"&amp;4"63)0%+"+$630+"&amp;K*$%)-"$3?6*&amp;-%&amp;$"&amp;J&amp;2/4)0&amp;$"'&amp;"4)$":+4&amp;%)$"'&amp;"</div>
+<div id="tl_19" class="t s3_19">%+')$"4)$"),03/)6*+-&amp;$"/+41%*6)$&lt;"2)-%&amp;-*&amp;-'+"&amp;4"+0'&amp;-"&amp;$%):4&amp;6*'+"</div>
+<div id="tm_19" class="t s3_19">)4"*-*6*+"'&amp;4")6%+"&amp;4&amp;6%+0)45"7*"B3&amp;0)"-&amp;6&amp;$)0*+"0&amp;/+-&amp;04)$&lt;"0&amp;&gt;3&amp;0*09"$3"</div>
+<div id="tn_19" class="t s3_19">/0+;*$*8-")4"?$6)4"'&amp;"4)"),03/)6*8-"6+00&amp;$/+-'*&amp;-%&amp;"+&lt;"&amp;-"$3"6)$+&lt;"</div>
+<div id="to_19" class="t s3_19">$+4*6*%)09"4)"3%*4*H)6*8-"'&amp;"4)$":+4&amp;%)$"'&amp;"6+-%*-,&amp;-6*)")4"N&amp;4&amp;,)'+"'&amp;"</div>
+<div id="tp_19" class="t s3_19">4)"`3$%*6*)"G)6*+-)4"M4&amp;6%+0)4"+")4"/&amp;0$+-)4"'&amp;4"F+2)-'+"Q&amp;-&amp;0)4</div>
+<div id="tq_19" class="t s3_19">M4&amp;6%+0)45</div>
+<div id="tr_19" class="t s5_19">V&amp;63&amp;0'&amp;"&gt;3&amp;"4)";*+4)6*8-"'&amp;4"$&amp;60&amp;%+"'&amp;4";+%+"-+"&amp;$"2+%*;+"/)0)"*2/&amp;'*04&amp;";+%)0")"3-"&amp;4&amp;6%+0&lt;"-*"/)0)"*2E"</div>
+<div id="ts_19" class="t s5_19">/3,-)0"$3"*'&amp;-%*')'"-*"0&amp;6300*0"$3";+%+5"!-%&amp;"%)4"$*%3)6*8-&lt;"0&amp;')6%&amp;"3-")6%)"'&amp;J)-'+"6+-$%)-6*)"'&amp;4"(&amp;6(+5</div>
+<div id="tt_19" class="t s4_19">F+*+$%&amp;'()+)*),*.,-+*),:,*]+1(0(%+'*0+*,.(-(=2*),0*W&amp;%&amp;*),*0+-*C,'-&amp;2+-*1&amp;2*)(-1+C+1()+)</div>
+<div id="tu_19" class="t s3_19">5</div>
+<div id="tv_19" class="t s4_19">*</div>
+<div id="tw_19" class="t s3_19">I)0)"&amp;44+O</div>
+<div id="tx_19" class="t s4_19">*</div>
+<div id="ty_19" class="t s3_19">g""I0+630&amp;"()6&amp;0"&amp;B&amp;6%*;)"4)"/0*+0*')'"="&amp;4")66&amp;$+")4";+%+"'&amp;"4)$"/&amp;0$+-)$"6+-"'*$6)/)6*')'"+"6+-"0&amp;'366*8-"&amp;-"</div>
+<div id="tz_19" class="t s3_19">$3"2+;*4*')'&lt;"&amp;-"$3";*$*8-"+"&amp;-"$3")3'*6*8-5</div>
+<div id="t10_19" class="t s4_19">R</div>
+<div id="t11_19" class="t s3_19">""7*"&amp;4"/&amp;0$+-)4"'&amp;4"F+2)-'+"Q&amp;-&amp;0)4"M4&amp;6%+0)4"+"&amp;4"N&amp;4&amp;,)'+"'&amp;"4)"`3$%*6*)"G)6*+-)4"M4&amp;6%+0)4"4&amp;"*-B+02)-"&gt;3&amp;"</div>
+<div id="t12_19" class="t s3_19">3-"&amp;4&amp;6%+0"6+-"'*$6)/)6*')'"+"4*2*%)6*8-"/&amp;02)-&amp;-%&amp;"+"%0)-$*%+0*)&lt;"0&amp;,*$%0)'+"&amp;-"$3"2&amp;$)"$+4*6*%)"&amp;2*%*0"$3";+%+"</div>
+<div id="t13_19" class="t s3_19">&amp;-"&amp;4"F3)0%+"U$630+"!66&amp;$*:4&amp;"SFU!T&lt;"%0)$49'&amp;$&amp;")441"6+-"4)"30-)&lt;"&amp;4"$+:0&amp;"="&amp;4"/)'08-&lt;"'&amp;J)-'+")"$3"$3/4&amp;-%&amp;"+"</div>
+<div id="t14_19" class="t s3_19">)4"/&amp;0$+-)4"'&amp;4"F+2)-'+"Q&amp;-&amp;0)4"M4&amp;6%+0)4"&amp;-"0&amp;$,3)0'+"'&amp;"4)"2&amp;$)")"$3"6)0,+5"</div>
+<div id="t15_19" class="t s3_19">7+4*6*%&amp;"4)")3%+0*H)6*8-"/)0)"&amp;4"3$+"'&amp;4"FU!")4"/0&amp;$*'&amp;-%&amp;"'&amp;"'*6()"2&amp;$)5"F+-$@4%&amp;4&amp;")4";+%)-%&amp;"$*"0&amp;&gt;3*&amp;0&amp;")4,@-"</div>
+<div id="t16_19" class="t s3_19">%*/+"'&amp;")=3')5"7*"&amp;$%9")6+2/)A)'+"'&amp;"3-"/&amp;00+",31)&lt;"/&amp;021%)4&amp;"*-,0&amp;$)0")4"63)0%+"+$630+"6+-"&amp;4"2*$2+5</div>
+<div id="t17_19" class="t s3_19">"""""""b'&amp;-%*?&gt;3&amp;"4)"6+-$%)-6*)"'&amp;"&amp;2*$*8-"'&amp;4";+%+"6+00&amp;$/+-'*&amp;-%&amp;"</div>
+<div id="t18_19" class="t s3_19">)4"&amp;4&amp;6%+0"="$&amp;/)0&amp;"&amp;4"%0+&gt;3&amp;4"'&amp;4"/)'08-5""7*"4+"0&amp;&gt;3*&amp;0&amp;&lt;"3%*4*6&amp;"/)0)"</div>
+<div id="t19_19" class="t s3_19">&amp;44+"4)"0&amp;,4)"&gt;3&amp;"4&amp;"B3&amp;"/0+;*$%)5</div>
+<div id="t1a_19" class="t s3_19">""""""</div>
+<div id="t1b_19" class="t s4_19">*"-(,2%,*-$*U'.+*,2*0+*1&amp;2-%+21(+*),*,.(-(=2*),*W&amp;%&amp;</div>
+<div id="t1c_19" class="t s3_19">"&amp;-"&amp;4"</div>
+<div id="t1d_19" class="t s3_19">&amp;$/)6*+"/0&amp;;*$%+"/)0)"&amp;44+5"V&amp;63&amp;0'&amp;"&gt;3&amp;"4)"+2*$*8-"'&amp;"&amp;$%)"6+-$E</div>
+<div id="t1e_19" class="t s3_19">%)-6*)"+6)$*+-)09"*-6+-;&amp;-*&amp;-%&amp;$")4";+%)-%&amp;5</div>
+<div id="t1f_19" class="t s4_19">*******/2%'e5$,0,*+0*,0,1%&amp;'*0+*1&amp;2-%+21(+*),*,.(-(=2*),*W&amp;%&amp;</div>
+<div id="t1g_19" class="t s3_19">"'&amp;:*E"</div>
+<div id="t1h_19" class="t s3_19">')2&amp;-%&amp;"?02)')&lt;"0&amp;*-%&amp;,09-'+4&amp;"$3"'+632&amp;-%+"61;*6+"&amp;-"&amp;4"2*$2+")6%+5</div>
+<div id="t1i_19" class="t s6_19">"</div>
+<div id="t1j_19" class="t s7_19">6HFFLµQ ±</div>
+<div id="t1k_19" class="t s8_19">$3(5785$ &lt; '(6$552//2 '(/</div>
+<div id="t1l_19" class="t s8_19">$&amp;72 (/(&amp;725$/</div>
+<div id="t1m_19" class="t s9_19">(/(&amp;&amp;Ζ21(6 ±²³´</div>
+<div id="t1n_19" class="t s10_19">0$18$/ (/(&amp;725$/ 3$5$ $8725Ζ'$'(6 '( 0(6$</div>
+<div id="t1o_19" class="t s11_19">CZ</div>
+<div id="t1p_19" class="t s1_19">3URFHGLPLHQWR SDUD HO 9RWR $VLVWLGR</div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg19Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg19"><object width="909" height="1286" data="19/19.svg" type="image/svg+xml" id="pdf19" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld19" type="text/javascript">
+
+var isIE = false;
+var f19 = [['t1_19',1132],['t2_19',1442],['t1j_19',477],['t1k_19',1369],['t1l_19',817],['t1m_19',412],['t1n_19',1281],['t1p_19',1805]];
+function load19(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f19);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 62;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_19");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+</body>
+</html>

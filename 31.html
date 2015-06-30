@@ -1,0 +1,434 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0;">
+
+<div id="jpedal" style="overflow: hidden; position:relative; width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load31();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_31{left:89px;top:313px;}
+#t2_31{left:89px;top:403px;}
+#t3_31{left:89px;top:490px;}
+#t4_31{left:89px;top:601px;}
+#t5_31{left:89px;top:713px;}
+#t6_31{left:83px;top:309px;}
+#t7_31{left:283px;top:309px;}
+#t8_31{left:83px;top:332px;}
+#t9_31{left:83px;top:355px;}
+#ta_31{left:126px;top:355px;}
+#tb_31{left:83px;top:399px;}
+#tc_31{left:83px;top:421px;}
+#td_31{left:314px;top:421px;}
+#te_31{left:83px;top:444px;}
+#tf_31{left:280px;top:444px;}
+#tg_31{left:83px;top:488px;}
+#th_31{left:83px;top:510px;}
+#ti_31{left:83px;top:533px;}
+#tj_31{left:236px;top:533px;}
+#tk_31{left:318px;top:533px;}
+#tl_31{left:83px;top:555px;}
+#tm_31{left:83px;top:600px;}
+#tn_31{left:273px;top:600px;}
+#to_31{left:83px;top:622px;}
+#tp_31{left:260px;top:622px;}
+#tq_31{left:83px;top:644px;}
+#tr_31{left:83px;top:666px;}
+#ts_31{left:83px;top:711px;}
+#tt_31{left:318px;top:711px;}
+#tu_31{left:83px;top:734px;}
+#tv_31{left:184px;top:734px;}
+#tw_31{left:83px;top:756px;}
+#tx_31{left:83px;top:778px;}
+#ty_31{left:83px;top:800px;}
+#tz_31{left:83px;top:822px;}
+#t10_31{left:107px;top:888px;}
+#t11_31{left:107px;top:908px;letter-spacing:1px;}
+#t12_31{left:107px;top:928px;}
+#t13_31{left:708px;top:1201px;}
+#t14_31{left:113px;top:218px;}
+#t15_31{left:113px;top:245px;}
+#t16_31{left:498px;top:1206px;}
+#t17_31{left:79px;top:57px;}
+#t18_31{left:726px;top:55px;}
+#t19_31{left:83px;top:136px;}
+#t1a_31{left:81px;top:149px;letter-spacing:-1px;}
+#t1b_31{left:386px;top:1252px;}
+#t1c_31{left:493px;top:1252px;}
+#t1d_31{left:833px;top:1251px;}
+#t1e_31{left:701px;top:625px;}
+#t1f_31{left:782px;top:328px;}
+#t1g_31{left:823px;top:328px;}
+#t1h_31{left:702px;top:341px;}
+#t1i_31{left:776px;top:345px;}
+#t1j_31{left:702px;top:355px;}
+#t1k_31{left:628px;top:555px;}
+#t1l_31{left:610px;top:400px;}
+#t1m_31{left:742px;top:420px;}
+#t1n_31{left:628px;top:540px;}
+#t1o_31{left:686px;top:565px;}
+#t1p_31{left:740px;top:534px;}
+#t1q_31{left:742px;top:558px;}
+#t1r_31{left:806px;top:548px;}
+#t1s_31{left:805px;top:565px;}
+#t1t_31{left:712px;top:582px;}
+#t1u_31{left:460px;top:583px;}
+#t1v_31{left:460px;top:598px;}
+#t1w_31{left:435px;top:630px;}
+#t1x_31{left:630px;top:751px;}
+#t1y_31{left:654px;top:760px;}
+#t1z_31{left:630px;top:766px;}
+#t20_31{left:765px;top:1019px;}
+#t21_31{left:687px;top:850px;}
+#t22_31{left:748px;top:977px;}
+#t23_31{left:606px;top:1003px;}
+#t24_31{left:688px;top:1012px;}
+#t25_31{left:723px;top:996px;}
+#t26_31{left:685px;top:1029px;}
+#t27_31{left:565px;top:1110px;}
+#t28_31{left:565px;top:1158px;}
+#t29_31{left:720px;top:1109px;}
+
+.s2_31{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Iden31;
+	color: rgb(33,29,29);
+}
+
+.s1_31{
+	FONT-SIZE: 51px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide31;
+	color: rgb(255,255,255);
+}
+
+.s5_31{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ISNDWV-OpenSans-Semibold-Iden31;
+	color: rgb(168,64,151);
+}
+
+.s8_31{
+	FONT-SIZE: 97px;
+	FONT-FAMILY: BQZQCD-Humanist521BT-Roman-Id31;
+	color: rgb(33,29,29);
+}
+
+.s4_31{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: ODLDAU-MyriadPro-Bold-Identit31;
+	color: rgb(168,64,151);
+}
+
+.s14_31{
+	FONT-SIZE: 54px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Iden31;
+	color: rgb(77,74,75);
+}
+
+.s11_31{
+	FONT-SIZE: 134px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide31;
+	color: rgb(255,255,255);
+}
+
+.s15_31{
+	FONT-SIZE: 24px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide31;
+	color: rgb(255,255,255);
+}
+
+.s10_31{
+	FONT-SIZE: 68px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide31;
+	color: rgb(255,255,255);
+}
+
+.s7_31{
+	FONT-SIZE: 34px;
+	FONT-FAMILY: ISNDWV-OpenSans-Semibold-Iden31;
+	color: rgb(168,64,151);
+}
+
+.s6_31{
+	FONT-SIZE: 97px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide31;
+	color: rgb(33,29,29);
+}
+
+.s13_31{
+	FONT-SIZE: 50px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide31;
+	color: rgb(77,74,75);
+}
+
+.s12_31{
+	FONT-SIZE: 50px;
+	FONT-FAMILY: TYFSDB-OpenSans-Light-Identit31;
+	color: rgb(77,74,75);
+}
+
+.s3_31{
+	FONT-SIZE: 73px;
+	FONT-FAMILY: ODLDAU-MyriadPro-Bold-Identit31;
+	color: rgb(33,29,29);
+}
+
+.s9_31{
+	FONT-SIZE: 103px;
+	FONT-FAMILY: RLXZZY-OpenSans-Bold-Identity31;
+	color: rgb(255,255,255);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts31" type="text/css" >
+
+@font-face {
+	font-family: BQZQCD-Humanist521BT-Roman-Id31;
+	src :url("31/fonts/BQZQCD-Humanist521BT-Roman-Id.woff") format("woff");
+}
+
+@font-face {
+	font-family: RLXZZY-OpenSans-Bold-Identity31;
+	src :url("31/fonts/RLXZZY-OpenSans-Bold-Identity.woff") format("woff");
+}
+
+@font-face {
+	font-family: ISNDWV-OpenSans-Semibold-Iden31;
+	src :url("31/fonts/ISNDWV-OpenSans-Semibold-Iden.woff") format("woff");
+}
+
+@font-face {
+	font-family: CBLQMD-OpenSans-Extrabold-Ide31;
+	src :url("31/fonts/CBLQMD-OpenSans-Extrabold-Ide.woff") format("woff");
+}
+
+@font-face {
+	font-family: ODLDAU-MyriadPro-Bold-Identit31;
+	src :url("31/fonts/ODLDAU-MyriadPro-Bold-Identit.woff") format("woff");
+}
+
+@font-face {
+	font-family: STQLMZ-MyriadPro-Regular-Iden31;
+	src :url("31/fonts/STQLMZ-MyriadPro-Regular-Iden.woff") format("woff");
+}
+
+@font-face {
+	font-family: TYFSDB-OpenSans-Light-Identit31;
+	src :url("31/fonts/TYFSDB-OpenSans-Light-Identit.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_31" class="t s1_31">±</div>
+<div id="t2_31" class="t s1_31">²</div>
+<div id="t3_31" class="t s1_31">³</div>
+<div id="t4_31" class="t s1_31">´</div>
+<div id="t5_31" class="t s1_31">µ</div>
+<div id="t6_31" class="t s2_31">"""""""F+-%)0"&amp;-"&amp;4"/)'08-"4)"</div>
+<div id="t7_31" class="t s3_31">1+2%()+)*</div>
+<div id="t8_31" class="t s3_31">),*C,'-&amp;2+-*Y$,*1&amp;21$''(,'&amp;2*+*</div>
+<div id="t9_31" class="t s3_31">W&amp;%+'</div>
+<div id="ta_31" class="t s2_31">"="0&amp;,*$%0)04+5</div>
+<div id="tb_31" class="t s2_31">"""""""!:0*0"4)"30-)&lt;"&amp;K%0)&amp;0"="6+-%)0"4+$"</div>
+<div id="tc_31" class="t s2_31">$+:0&amp;$"'&amp;";+%)6*8-5"!$&amp;-%)0"4)"</div>
+<div id="td_31" class="t s3_31">1+2%(Z</div>
+<div id="te_31" class="t s3_31">)+)*),*-&amp;:',-*$%(0(^+)&amp;-</div>
+<div id="tf_31" class="t s2_31">5</div>
+<div id="tg_31" class="t s2_31">"""""""F+2/)0)0"&amp;4"-@2&amp;0+"'&amp;";+%)-%&amp;$"</div>
+<div id="th_31" class="t s2_31">6+-"&amp;4"'&amp;"4+$"$+:0&amp;$"3%*4*H)'+$5</div>
+<div id="ti_31" class="t s2_31">7*"&amp;K*$%&amp;&lt;"0&amp;,*$%0)0"4)"</div>
+<div id="tj_31" class="t s3_31">)(],',21(+</div>
+<div id="tk_31" class="t s2_31">"&amp;-%0&amp;"</div>
+<div id="tl_31" class="t s2_31">)2:)$"$32)$5</div>
+<div id="tm_31" class="t s2_31">"""""""F+-%)0"4+$"$+:0&amp;$"6+-</div>
+<div id="tn_31" class="t s3_31">*W&amp;%&amp;-*),*</div>
+<div id="to_31" class="t s3_31">(),2%()+)*(.C$52+)+</div>
+<div id="tp_31" class="t s2_31">5"!$&amp;-%)0"4)"</div>
+<div id="tq_31" class="t s2_31">2*$2)"6)-%*')'"&amp;-"%+')$"4)$"6)%&amp;,+E</div>
+<div id="tr_31" class="t s2_31">01)$"&gt;3&amp;"$&amp;"&amp;4*,&amp;-5</div>
+<div id="ts_31" class="t s2_31">"""""""!:0*0"&amp;4"0&amp;$%+"'&amp;"4+$"$+:0&amp;$&lt;"</div>
+<div id="tt_31" class="t s3_31">1+0(UZ</div>
+<div id="tu_31" class="t s3_31">1+'*0&amp;-*W&amp;%&amp;-</div>
+<div id="tv_31" class="t s2_31">"="$&amp;/)0)0"4)$":+4&amp;%)$"</div>
+<div id="tw_31" class="t s2_31">&amp;-"/*4+-&amp;$"$&amp;,@-"$3"64)$*?6)6*8-"&amp;-O"</div>
+<div id="tx_31" class="t s2_31">;+%+$")?02)%*;+$"S)/*4)-'+"4)$":+4&amp;E</div>
+<div id="ty_31" class="t s2_31">%)$"/+0"),03/)6*8-"/+41%*6)T&lt;";+%+$"</div>
+<div id="tz_31" class="t s2_31">-34+$"=";+%+$"0&amp;6300*'+$5</div>
+<div id="t10_31" class="t s4_31">A9?LI9F/*cM/*F9H*&lt;"L9H</div>
+<div id="t11_31" class="t s4_31">I/6GHLI"&lt;9H*H/"?*A9G?AG&lt;/?L/H</div>
+<div id="t12_31" class="t s4_31">/?*F9H*LI/H*&lt;9AMJ/?L9H</div>
+<div id="t13_31" class="t s5_31">7HOHJUDPD</div>
+<div id="t14_31" class="t s6_31">3DVRV SDUD FRPSOHWDU HO $FWD GH (VFUXWLQLR¶</div>
+<div id="t15_31" class="t s6_31">7HOHJUDPD \ &amp;HUWLȴFDGR GH (VFUXWLQLR</div>
+<div id="t16_31" class="t s7_31">Ζ0$*(1 Ζ/8675$7Ζ9$ $ )Ζ1(6 'Ζ'±&amp;7Ζ&amp;26</div>
+<div id="t17_31" class="t s8_31">&amp;21)(&amp;&amp;,Ð1 '( /$ '2&amp;80(17$&amp;,Ð1</div>
+<div id="t18_31" class="t s9_31">6HFFLµQ ±</div>
+<div id="t19_31" class="t s10_31">(OHFFLRQHV</div>
+<div id="t1a_31" class="t s11_31">3$62</div>
+<div id="t1b_31" class="t s12_31">(/(&amp;&amp;Ζ21(6 ±²³´</div>
+<div id="t1c_31" class="t s13_31">0$18$/ (/(&amp;725$/ 3$5$ $8725Ζ'$'(6 '( 0(6$</div>
+<div id="t1d_31" class="t s14_31">fC</div>
+<div id="t1e_31" class="t s5_31">$FWD GH (VFUXWLQLR</div>
+<div id="t1f_31" class="t s15_31">±²</div>
+<div id="t1g_31" class="t s15_31">±²</div>
+<div id="t1h_31" class="t s15_31">±</div>
+<div id="t1i_31" class="t s15_31">²</div>
+<div id="t1j_31" class="t s15_31">³</div>
+<div id="t1k_31" class="t s15_31">´</div>
+<div id="t1l_31" class="t s15_31">·</div>
+<div id="t1m_31" class="t s15_31">¸</div>
+<div id="t1n_31" class="t s15_31">¹</div>
+<div id="t1o_31" class="t s15_31">±±</div>
+<div id="t1p_31" class="t s15_31">±º</div>
+<div id="t1q_31" class="t s15_31">´</div>
+<div id="t1r_31" class="t s15_31">»</div>
+<div id="t1s_31" class="t s15_31">±±</div>
+<div id="t1t_31" class="t s15_31">±³</div>
+<div id="t1u_31" class="t s15_31">±³</div>
+<div id="t1v_31" class="t s15_31">±³</div>
+<div id="t1w_31" class="t s7_31">Ζ0$*(1 Ζ/8675$7Ζ9$ $ )Ζ1(6 'Ζ'±&amp;7Ζ&amp;26</div>
+<div id="t1x_31" class="t s15_31">±</div>
+<div id="t1y_31" class="t s15_31">²</div>
+<div id="t1z_31" class="t s15_31">³</div>
+<div id="t20_31" class="t s15_31">´</div>
+<div id="t21_31" class="t s15_31">·</div>
+<div id="t22_31" class="t s15_31">¸</div>
+<div id="t23_31" class="t s15_31">¹</div>
+<div id="t24_31" class="t s15_31">»</div>
+<div id="t25_31" class="t s15_31">±º</div>
+<div id="t26_31" class="t s15_31">±±</div>
+<div id="t27_31" class="t s15_31">±³</div>
+<div id="t28_31" class="t s15_31">±³</div>
+<div id="t29_31" class="t s15_31">±³</div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg31Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg31"><object width="909" height="1286" data="31/31.svg" type="image/svg+xml" id="pdf31" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld31" type="text/javascript">
+
+var isIE = false;
+var f31 = [['t14_31',2171],['t15_31',1874],['t16_31',691],['t17_31',1805],['t18_31',477],['t1b_31',412],['t1c_31',1281],['t1e_31',581],['t1w_31',691]];
+function load31(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f31);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 82;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_31");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+</body>
+</html>

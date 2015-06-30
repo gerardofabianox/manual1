@@ -1,0 +1,363 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0;">
+
+<div id="jpedal" style="overflow: hidden; position:relative; width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load4();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_4{left:352px;top:428px;}
+#t2_4{left:352px;top:448px;}
+#t3_4{left:352px;top:468px;}
+#t4_4{left:352px;top:488px;}
+#t5_4{left:352px;top:508px;}
+#t6_4{left:352px;top:529px;}
+#t7_4{left:352px;top:549px;}
+#t8_4{left:352px;top:569px;}
+#t9_4{left:352px;top:609px;}
+#ta_4{left:352px;top:630px;}
+#tb_4{left:352px;top:650px;}
+#tc_4{left:494px;top:650px;}
+#td_4{left:541px;top:650px;}
+#te_4{left:693px;top:650px;}
+#tf_4{left:352px;top:671px;}
+#tg_4{left:431px;top:671px;}
+#th_4{left:519px;top:671px;}
+#ti_4{left:578px;top:671px;}
+#tj_4{left:734px;top:671px;}
+#tk_4{left:352px;top:692px;}
+#tl_4{left:431px;top:692px;}
+#tm_4{left:536px;top:692px;}
+#tn_4{left:352px;top:732px;}
+#to_4{left:352px;top:753px;}
+#tp_4{left:352px;top:773px;}
+#tq_4{left:352px;top:813px;}
+#tr_4{left:352px;top:833px;}
+#ts_4{left:352px;top:874px;}
+#tt_4{left:492px;top:77px;}
+#tu_4{left:410px;top:968px;}
+#tv_4{left:583px;top:968px;}
+#tw_4{left:754px;top:968px;}
+#tx_4{left:583px;top:968px;}
+#ty_4{left:588px;top:968px;}
+#tz_4{left:588px;top:968px;}
+#t10_4{left:588px;top:968px;}
+#t11_4{left:588px;top:968px;}
+#t12_4{left:754px;top:968px;}
+#t13_4{left:754px;top:968px;}
+#t14_4{left:758px;top:968px;}
+#t15_4{left:754px;top:968px;}
+#t16_4{left:758px;top:968px;}
+#t17_4{left:410px;top:968px;}
+#t18_4{left:410px;top:968px;}
+#t19_4{left:410px;top:968px;}
+#t1a_4{left:410px;top:968px;}
+#t1b_4{left:410px;top:968px;}
+#t1c_4{left:409px;top:1074px;}
+#t1d_4{left:607px;top:1074px;}
+#t1e_4{left:122px;top:1252px;}
+#t1f_4{left:228px;top:1252px;}
+#t1g_4{left:84px;top:1251px;}
+#t1h_4{left:358px;top:921px;}
+#t1i_4{left:358px;top:1027px;}
+
+.s1_4{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Ident4;
+	color: rgb(10,6,5);
+}
+
+.s5_4{
+	FONT-SIZE: 59px;
+	FONT-FAMILY: HWQDJI-Humanist777BT-BlackCond4;
+	color: rgb(58,54,54);
+}
+
+.s6_4{
+	FONT-SIZE: 59px;
+	FONT-FAMILY: HWQDJI-Humanist777BT-BlackCond4;
+	color: rgb(47,44,44);
+}
+
+.s13_4{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ODLDAU-MyriadPro-Bold-Identity4;
+	color: rgb(67,63,64);
+}
+
+.s10_4{
+	FONT-SIZE: 50px;
+	FONT-FAMILY: TYFSDB-OpenSans-Light-Identity4;
+	color: rgb(67,63,64);
+}
+
+.s2_4{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ODLDAU-MyriadPro-Bold-Identity4;
+	color: rgb(10,6,5);
+}
+
+.s4_4{
+	FONT-SIZE: 59px;
+	FONT-FAMILY: HWQDJI-Humanist777BT-BlackCond4;
+	color: rgb(10,6,5);
+}
+
+.s8_4{
+	FONT-SIZE: 59px;
+	FONT-FAMILY: HWQDJI-Humanist777BT-BlackCond4;
+	color: rgb(35,31,32);
+}
+
+.s12_4{
+	FONT-SIZE: 54px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Ident4;
+	color: rgb(67,63,64);
+}
+
+.s9_4{
+	FONT-SIZE: 59px;
+	FONT-FAMILY: HWQDJI-Humanist777BT-BlackCond4;
+	color: rgb(69,64,63);
+}
+
+.s11_4{
+	FONT-SIZE: 50px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Iden4;
+	color: rgb(67,63,64);
+}
+
+.s3_4{
+	FONT-SIZE: 653px;
+	FONT-FAMILY: ISNDWV-OpenSans-Semibold-Ident4;
+	color: rgb(255,255,255);
+}
+
+.s7_4{
+	FONT-SIZE: 59px;
+	FONT-FAMILY: HWQDJI-Humanist777BT-BlackCond4;
+	color: rgb(18,17,15);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts4" type="text/css" >
+
+@font-face {
+	font-family: TYFSDB-OpenSans-Light-Identity4;
+	src :url("4/fonts/TYFSDB-OpenSans-Light-Identity.woff") format("woff");
+}
+
+@font-face {
+	font-family: STQLMZ-MyriadPro-Regular-Ident4;
+	src :url("4/fonts/STQLMZ-MyriadPro-Regular-Ident.woff") format("woff");
+}
+
+@font-face {
+	font-family: HWQDJI-Humanist777BT-BlackCond4;
+	src :url("4/fonts/HWQDJI-Humanist777BT-BlackCond.woff") format("woff");
+}
+
+@font-face {
+	font-family: ISNDWV-OpenSans-Semibold-Ident4;
+	src :url("4/fonts/ISNDWV-OpenSans-Semibold-Ident.woff") format("woff");
+}
+
+@font-face {
+	font-family: CBLQMD-OpenSans-Extrabold-Iden4;
+	src :url("4/fonts/CBLQMD-OpenSans-Extrabold-Iden.woff") format("woff");
+}
+
+@font-face {
+	font-family: ODLDAU-MyriadPro-Bold-Identity4;
+	src :url("4/fonts/ODLDAU-MyriadPro-Bold-Identity.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_4" class="t s1_4">"""""""#$%&amp;'"()"$*'+"'&amp;$*,-)'+.)"/)0)"'&amp;$&amp;1/&amp;2)0"3-)"'&amp;"4)$"53-6*+-&amp;$"</div>
+<div id="t2_4" class="t s1_4">17$"*1/+0%)-%&amp;$"&amp;-"&amp;4"/0+6&amp;$+"'&amp;"&amp;4&amp;66*8-"'&amp;1+607%*6)"'&amp;"4+$"0&amp;/0&amp;9"</div>
+<div id="t3_4" class="t s1_4">$&amp;-%)-%&amp;$"'&amp;4"/3&amp;:4+;"$&amp;,&lt;-"4)$"0&amp;,4)$"="4+$"/0*-6*/*+$"&gt;3&amp;"6+-$),0)"4)"</div>
+<div id="t4_4" class="t s1_4">?+-$%*%36*8-"'&amp;"4)" )6*8-"!0,&amp;-%*-)@"</div>
+<div id="t5_4" class="t s1_4">A3"/)0%*6*/)6*8-"6+1+")3%+0*')'"'&amp;"1&amp;$)"&amp;$"B*%)4"/)0)",)0)-%*C)0"&gt;3&amp;"</div>
+<div id="t6_4" class="t s1_4">4+$"6+1*6*+$"$&amp;"'&amp;$)00+44&amp;-"'&amp;"1)-&amp;0)"%0)-$/)0&amp;-%&amp;"="6+-D):4&amp;;"6+-%0*9"</div>
+<div id="t7_4" class="t s1_4">:3=&amp;-'+"'&amp;"&amp;$%&amp;"1+'+")"1)-%&amp;-&amp;0"4)"4&amp;,*%*1*')'"&gt;3&amp;"6)0)6%&amp;0*C)")"4+$"</div>
+<div id="t8_4" class="t s1_4">/0+6&amp;$+$"&amp;4&amp;6%+0)4&amp;$"-)6*+-)4&amp;$@</div>
+<div id="t9_4" class="t s1_4">E)0)"&amp;44+;"/+-&amp;1+$")"$3"'*$/+$*6*8-"&amp;$%&amp;"630$+"'&amp;$%*-)'+")":0*-')04&amp;""</div>
+<div id="ta_4" class="t s1_4">4+$"6+-+6*1*&amp;-%+$"-&amp;6&amp;$)0*+$"/)0)"&amp;F&amp;06&amp;0"$3$"53-6*+-&amp;$"6+1+"""</div>
+<div id="tb_4" class="t s2_4">"#$%&amp;'()(*(+*,+-)</div>
+<div id="tc_4" class="t s1_4">"&amp;-"4)$"</div>
+<div id="td_4" class="t s2_4">./+00'%1+-*2&amp;',)&amp;')-</div>
+<div id="te_4" class="t s1_4">"&gt;3&amp;"$&amp;"6&amp;4&amp;:0)07-"</div>
+<div id="tf_4" class="t s1_4">&amp;4"/08G*1+"</div>
+<div id="tg_4" class="t s2_4">3*(+*"4%-$%</div>
+<div id="th_4" class="t s1_4">"="&amp;-"4)$"</div>
+<div id="ti_4" class="t s2_4">./+00'%1+-*5+1+&amp;)/+-</div>
+<div id="tj_4" class="t s1_4">"&gt;3&amp;"$&amp;"'&amp;$)9"</div>
+<div id="tk_4" class="t s1_4">00+44)07-"&amp;4"</div>
+<div id="tl_4" class="t s2_4">67*(+*80$#9&amp;+</div>
+<div id="tm_4" class="t s1_4">@</div>
+<div id="tn_4" class="t s1_4">A*"()"$*'+"'&amp;$*,-)'+.)"$3/4&amp;-%&amp;"+"B+6)4;"4&amp;)"&amp;$%&amp;"1)-3)4"6+1+"$*"</div>
+<div id="to_4" class="t s1_4">&amp;F&amp;06*&amp;0)"4)"53-6*8-"'&amp;"E0&amp;$*'&amp;-%&amp;.)"'&amp;"1&amp;$)"=)"&gt;3&amp;;")'&amp;17$"'&amp;")$*$%*09"</div>
+<div id="tp_4" class="t s1_4">4+;"/3&amp;'&amp;"%+6)04&amp;"&amp;F&amp;06&amp;0"'*6()"53-6*8-@</div>
+<div id="tq_4" class="t s1_4">H)"?71)0)" )6*+-)4"I4&amp;6%+0)4"="4)"J*0&amp;66*8-" )6*+-)4"I4&amp;6%+0)4"4&amp;"),0)9"</div>
+<div id="tr_4" class="t s1_4">'&amp;6&amp;-"$3"6+1/0+1*$+"6*3')')-+@</div>
+<div id="ts_4" class="t s1_4">E)0)"17$"*-5+01)6*8-"$&amp;,3K-+$"&amp;-"-3&amp;$%0)$"0&amp;'&amp;$"$+6*)4&amp;$L</div>
+<div id="tt_4" class="t s3_4">LQWUR±</div>
+<div id="tu_4" class="t s4_4">#,QIR',1(</div>
+<div id="tv_4" class="t s4_4">,QIR±',1(</div>
+<div id="tw_4" class="t s4_4">,QIR',1(79</div>
+<div id="tx_4" class="t s5_4">,QI</div>
+<div id="ty_4" class="t s6_4">QI</div>
+<div id="tz_4" class="t s7_4">QI</div>
+<div id="t10_4" class="t s5_4">Q</div>
+<div id="t11_4" class="t s8_4">Q</div>
+<div id="t12_4" class="t s9_4">,Q</div>
+<div id="t13_4" class="t s7_4">,Q</div>
+<div id="t14_4" class="t s5_4">Q</div>
+<div id="t15_4" class="t s6_4">,Q</div>
+<div id="t16_4" class="t s8_4">Q</div>
+<div id="t17_4" class="t s9_4">#</div>
+<div id="t18_4" class="t s6_4">#</div>
+<div id="t19_4" class="t s7_4">#</div>
+<div id="t1a_4" class="t s8_4">#</div>
+<div id="t1b_4" class="t s5_4">#</div>
+<div id="t1c_4" class="t s4_4">#&amp;DPDUD(OHFWRUDO</div>
+<div id="t1d_4" class="t s4_4">&amp;iPDUD 1DFLRQDO (OHFWRUDO</div>
+<div id="t1e_4" class="t s10_4">(/(&amp;&amp;Ζ21(6 ±²³´</div>
+<div id="t1f_4" class="t s11_4">0$18$/ (/(&amp;725$/ 3$5$ $8725Ζ'$'(6 '( 0(6$</div>
+<div id="t1g_4" class="t s12_4">MN</div>
+<div id="t1h_4" class="t s13_4">:'&amp;+00';1*&lt;)0'%1)/*./+0$%&amp;)/</div>
+<div id="t1i_4" class="t s13_4">=&gt;,)&amp;)*&lt;)0'%1)/*./+0$%&amp;)/</div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg4Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg4"><object width="909" height="1286" data="4/4.svg" type="image/svg+xml" id="pdf4" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld4" type="text/javascript">
+
+var isIE = false;
+var f4 = [['t4_4',1036],['tq_4',1947],['t1d_4',674],['t1e_4',412],['t1f_4',1281]];
+function load4(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f4);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 55;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_4");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+</body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0;">
+
+<div id="jpedal" style="overflow: hidden; position:relative; width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load15();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_15{left:115px;top:154px;}
+#t2_15{left:197px;top:201px;}
+#t3_15{left:387px;top:201px;}
+#t4_15{left:233px;top:201px;}
+#t5_15{left:197px;top:221px;}
+#t6_15{left:197px;top:241px;}
+#t7_15{left:197px;top:261px;}
+#t8_15{left:197px;top:282px;}
+#t9_15{left:110px;top:560px;}
+#ta_15{left:500px;top:650px;}
+#tb_15{left:516px;top:649px;}
+#tc_15{left:624px;top:649px;}
+#td_15{left:629px;top:649px;}
+#te_15{left:727px;top:649px;}
+#tf_15{left:732px;top:649px;}
+#tg_15{left:785px;top:649px;}
+#th_15{left:804px;top:649px;}
+#ti_15{left:497px;top:663px;}
+#tj_15{left:516px;top:691px;}
+#tk_15{left:648px;top:691px;}
+#tl_15{left:494px;top:705px;}
+#tm_15{left:494px;top:719px;}
+#tn_15{left:494px;top:733px;}
+#to_15{left:513px;top:761px;}
+#tp_15{left:675px;top:761px;}
+#tq_15{left:497px;top:774px;}
+#tr_15{left:516px;top:802px;}
+#ts_15{left:516px;top:830px;}
+#tt_15{left:516px;top:858px;}
+#tu_15{left:697px;top:858px;}
+#tv_15{left:497px;top:872px;}
+#tw_15{left:494px;top:886px;}
+#tx_15{left:494px;top:900px;}
+#ty_15{left:494px;top:914px;}
+#tz_15{left:494px;top:928px;}
+#t10_15{left:516px;top:956px;}
+#t11_15{left:580px;top:956px;}
+#t12_15{left:494px;top:970px;}
+#t13_15{left:494px;top:984px;}
+#t14_15{left:500px;top:693px;}
+#t15_15{left:500px;top:763px;}
+#t16_15{left:499px;top:804px;}
+#t17_15{left:500px;top:832px;}
+#t18_15{left:500px;top:859px;}
+#t19_15{left:501px;top:957px;}
+#t1a_15{left:433px;top:1091px;}
+#t1b_15{left:190px;top:1161px;}
+#t1c_15{left:275px;top:1167px;}
+#t1d_15{left:528px;top:1068px;}
+#t1e_15{left:635px;top:1068px;}
+#t1f_15{left:640px;top:1068px;}
+#t1g_15{left:738px;top:1068px;}
+#t1h_15{left:743px;top:1068px;}
+#t1i_15{left:797px;top:1068px;}
+#t1j_15{left:815px;top:1068px;}
+#t1k_15{left:505px;top:1082px;}
+#t1l_15{left:519px;top:1082px;}
+#t1m_15{left:528px;top:1111px;}
+#t1n_15{left:660px;top:1111px;}
+#t1o_15{left:505px;top:1126px;}
+#t1p_15{left:505px;top:1140px;}
+#t1q_15{left:505px;top:1155px;}
+#t1r_15{left:525px;top:1184px;}
+#t1s_15{left:541px;top:1184px;}
+#t1t_15{left:583px;top:1184px;}
+#t1u_15{left:509px;top:1067px;}
+#t1v_15{left:509px;top:1112px;}
+#t1w_15{left:509px;top:1184px;}
+#t1x_15{left:435px;top:690px;}
+#t1y_15{left:267px;top:750px;}
+#t1z_15{left:114px;top:786px;}
+#t20_15{left:178px;top:786px;}
+#t21_15{left:264px;top:786px;}
+#t22_15{left:391px;top:786px;}
+#t23_15{left:447px;top:907px;}
+#t24_15{left:88px;top:337px;}
+#t25_15{left:83px;top:337px;}
+#t26_15{left:91px;top:377px;}
+#t27_15{left:83px;top:377px;}
+#t28_15{left:83px;top:398px;}
+#t29_15{left:83px;top:418px;}
+#t2a_15{left:83px;top:438px;}
+#t2b_15{left:91px;top:478px;}
+#t2c_15{left:83px;top:478px;}
+#t2d_15{left:83px;top:499px;}
+#t2e_15{left:83px;top:519px;}
+#t2f_15{left:83px;top:600px;}
+#t2g_15{left:88px;top:1014px;}
+#t2h_15{left:727px;top:55px;}
+#t2i_15{left:84px;top:52px;}
+#t2j_15{left:84px;top:81px;}
+#t2k_15{left:386px;top:1252px;}
+#t2l_15{left:493px;top:1252px;}
+#t2m_15{left:833px;top:1251px;}
+
+.s10_15{
+	FONT-SIZE: 103px;
+	FONT-FAMILY: RLXZZY-OpenSans-Bold-Identity15;
+	color: rgb(255,255,255);
+}
+
+.s9_15{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Iden15;
+	color: rgb(68,71,156);
+}
+
+.s12_15{
+	FONT-SIZE: 50px;
+	FONT-FAMILY: TYFSDB-OpenSans-Light-Identit15;
+	color: rgb(77,74,75);
+}
+
+.s1_15{
+	FONT-SIZE: 97px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide15;
+	color: rgb(33,29,29);
+}
+
+.s8_15{
+	FONT-SIZE: 44px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide15;
+	color: rgb(255,255,255);
+}
+
+.s6_15{
+	FONT-SIZE: 42px;
+	FONT-FAMILY: TYFSDB-OpenSans-Light-Identit15;
+	color: rgb(33,29,29);
+}
+
+.s14_15{
+	FONT-SIZE: 54px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Iden15;
+	color: rgb(77,74,75);
+}
+
+.s11_15{
+	FONT-SIZE: 97px;
+	FONT-FAMILY: BQZQCD-Humanist521BT-Roman-Id15;
+	color: rgb(33,29,29);
+}
+
+.s7_15{
+	FONT-SIZE: 43px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide15;
+	color: rgb(255,255,255);
+}
+
+.s5_15{
+	FONT-SIZE: 42px;
+	FONT-FAMILY: ISNDWV-OpenSans-Semibold-Iden15;
+	color: rgb(33,29,29);
+}
+
+.s4_15{
+	FONT-SIZE: 39px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide15;
+	color: rgb(255,255,255);
+}
+
+.s3_15{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ODLDAU-MyriadPro-Bold-Identit15;
+	color: rgb(68,71,156);
+}
+
+.s13_15{
+	FONT-SIZE: 50px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide15;
+	color: rgb(77,74,75);
+}
+
+.s2_15{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Iden15;
+	color: rgb(33,29,29);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts15" type="text/css" >
+
+@font-face {
+	font-family: BQZQCD-Humanist521BT-Roman-Id15;
+	src :url("15/fonts/BQZQCD-Humanist521BT-Roman-Id.woff") format("woff");
+}
+
+@font-face {
+	font-family: RLXZZY-OpenSans-Bold-Identity15;
+	src :url("15/fonts/RLXZZY-OpenSans-Bold-Identity.woff") format("woff");
+}
+
+@font-face {
+	font-family: ISNDWV-OpenSans-Semibold-Iden15;
+	src :url("15/fonts/ISNDWV-OpenSans-Semibold-Iden.woff") format("woff");
+}
+
+@font-face {
+	font-family: CBLQMD-OpenSans-Extrabold-Ide15;
+	src :url("15/fonts/CBLQMD-OpenSans-Extrabold-Ide.woff") format("woff");
+}
+
+@font-face {
+	font-family: ODLDAU-MyriadPro-Bold-Identit15;
+	src :url("15/fonts/ODLDAU-MyriadPro-Bold-Identit.woff") format("woff");
+}
+
+@font-face {
+	font-family: STQLMZ-MyriadPro-Regular-Iden15;
+	src :url("15/fonts/STQLMZ-MyriadPro-Regular-Iden.woff") format("woff");
+}
+
+@font-face {
+	font-family: TYFSDB-OpenSans-Light-Identit15;
+	src :url("15/fonts/TYFSDB-OpenSans-Light-Identit.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_15" class="t s1_15">$SHUWXUD GHO DFWR HOHFWRUDO</div>
+<div id="t2_15" class="t s2_15">!"4)$"</div>
+<div id="t3_15" class="t s2_15">&lt;")3-&gt;3&amp;"$&amp;"&amp;-63&amp;-%0&amp;"/0&amp;$&amp;-%&amp;"$+4+"3-)")3%+0*')'"</div>
+<div id="t4_15" class="t s3_15">`;@@*a&amp;1&gt;&amp;b*,2*C$2%&amp;</div>
+<div id="t5_15" class="t s2_15">'&amp;"2&amp;$)&lt;"$&amp;"')09"*-*6*+")4"/0+6&amp;$+"'&amp;";+%)6*8-"6+2/4&amp;%)-'+"&amp;4"</div>
+<div id="t6_15" class="t s2_15">)6%)"'&amp;")/&amp;0%30)&lt;"/0+;*$%)"/+0"4)"`3$%*6*)"G)6*+-)4"M4&amp;6%+0)4"SI!7UT"</div>
+<div id="t7_15" class="t s2_15">="`3-%)"M4&amp;6%+0)4"G)6*+-)4"SQ&amp;-&amp;0)4&amp;$T"="&gt;3&amp;"$&amp;"&amp;-63&amp;-%0)"&amp;-"&amp;4"</div>
+<div id="t8_15" class="t s2_15">&amp;J&amp;2/4)0"'&amp;4"/)'08-"'&amp;"2&amp;$)"'&amp;4"I0&amp;$*'&amp;-%&amp;5"!"%)4"?-&lt;"'&amp;:&amp;09O</div>
+<div id="t9_15" class="t s1_15">7UDEDMDQGR VREUH HO SDGUµQ</div>
+<div id="ta_15" class="t s4_15">±</div>
+<div id="tb_15" class="t s5_15">/RV GDWRV GHO GLVWULWR</div>
+<div id="tc_15" class="t s6_15">±</div>
+<div id="td_15" class="t s5_15">OD VHFFLµQ HOHFWRUDO</div>
+<div id="te_15" class="t s6_15">±</div>
+<div id="tf_15" class="t s5_15">HO FLUFXLWR</div>
+<div id="tg_15" class="t s6_15">\ OD</div>
+<div id="th_15" class="t s5_15">PHVD</div>
+<div id="ti_15" class="t s6_15">D OD TXH OH FRUUHVSRQGH HO SDGUµQ²</div>
+<div id="tj_15" class="t s5_15">/RV GDWRV GH ORV HOHFWRUHV</div>
+<div id="tk_15" class="t s6_15">± RUGHQDGRV SRU FROXPQD³</div>
+<div id="tl_15" class="t s6_15">ȏ $SHOOLGR± 1RPEUH \ 'RPLFLOLR²</div>
+<div id="tm_15" class="t s6_15">ȏ 1¼PHUR GH 2UGHQ²</div>
+<div id="tn_15" class="t s6_15">ȏ 1¼PHUR GH 'RFXPHQWR± 7LSR \ &amp;ODVH²</div>
+<div id="to_15" class="t s5_15">/DV IRWRJUDI¯DV GH ORV HOHFWRUHV</div>
+<div id="tp_15" class="t s6_15">TXH KD\DQ WUDPLWDGR HO '1Ζ KDVWD</div>
+<div id="tq_15" class="t s6_15">HO ´¶·¸¹·´¸º»²</div>
+<div id="tr_15" class="t s6_15">8Q HVSDFLR SDUD DVHQWDU ODV REVHUYDFLRQHV²</div>
+<div id="ts_15" class="t s6_15">8Q HVSDFLR SDUD DVHQWDU OD ȴUPD GHO HOHFWRU²</div>
+<div id="tt_15" class="t s5_15">/DV FRQVWDQFLDV GH HPLVLµQ GH YRWR</div>
+<div id="tu_15" class="t s6_15">± WURTXHODGDV SDUD IDFLOLWDU VX</div>
+<div id="tv_15" class="t s6_15">HQWUHJD DO YRODQWH± FRQWLHQHQ³</div>
+<div id="tw_15" class="t s6_15">ȏ 1¼PHUR GH RUGHQ \ FµGLJR GH EDUUDV²</div>
+<div id="tx_15" class="t s6_15">ȏ /RV GDWRV GH OD HOHFFLµQ± ORV GH OD PHVD \ ORV GHO HOHFWRU²</div>
+<div id="ty_15" class="t s6_15">ȏ 8Q HVSDFLR SDUD TXH 8G² DVLHQWH VX ȴUPD± XQD YH] TXH HO HOHFWRU</div>
+<div id="tz_15" class="t s6_15">KD\D YRWDGR²</div>
+<div id="t10_15" class="t s6_15">/RV FDVRV GH</div>
+<div id="t11_15" class="t s5_15">HOHFWRUHV DXVHQWHV SRU GHVDSDULFLµQ IRU]DGD</div>
+<div id="t12_15" class="t s6_15">LQFOX\HQ HQ OD FROXPQD GH REVHUYDFLRQHV± XQD OH\HQGD TXH DFUHGLWD WDO</div>
+<div id="t13_15" class="t s6_15">VLWXDFLµQ \ WRGRV VXV HVSDFLRV VH HQFXHQWUDQ JULVDGRV²</div>
+<div id="t14_15" class="t s4_15">²</div>
+<div id="t15_15" class="t s4_15">³</div>
+<div id="t16_15" class="t s4_15">´</div>
+<div id="t17_15" class="t s4_15">¶</div>
+<div id="t18_15" class="t s4_15">·</div>
+<div id="t19_15" class="t s4_15">¸</div>
+<div id="t1a_15" class="t s7_15">±</div>
+<div id="t1b_15" class="t s7_15">²</div>
+<div id="t1c_15" class="t s7_15">³</div>
+<div id="t1d_15" class="t s5_15">/RV GDWRV GHO GLVWULWR</div>
+<div id="t1e_15" class="t s6_15">±</div>
+<div id="t1f_15" class="t s5_15">OD VHFFLµQ HOHFWRUDO</div>
+<div id="t1g_15" class="t s6_15">±</div>
+<div id="t1h_15" class="t s5_15">HO FLUFXLWR</div>
+<div id="t1i_15" class="t s6_15">\ OD</div>
+<div id="t1j_15" class="t s5_15">PH±</div>
+<div id="t1k_15" class="t s5_15">VD</div>
+<div id="t1l_15" class="t s6_15">VH GLVSRQHQ HQ HO H[WUHPR VXSHULRU GHO SDGUµQ²</div>
+<div id="t1m_15" class="t s5_15">/RV GDWRV GH ORV HOHFWRUHV</div>
+<div id="t1n_15" class="t s6_15">± RUGHQDGRV SRU FROXPQD³</div>
+<div id="t1o_15" class="t s6_15">ȏ $SHOOLGR± 1RPEUH \ 'RPLFLOLR²</div>
+<div id="t1p_15" class="t s6_15">ȏ 1¼PHUR GH 2UGHQ²</div>
+<div id="t1q_15" class="t s6_15">ȏ 1¼PHUR GH 'RFXPHQWR± 7LSR \ &amp;ODVH²</div>
+<div id="t1r_15" class="t s6_15">8Q</div>
+<div id="t1s_15" class="t s5_15">HVSDFLR</div>
+<div id="t1t_15" class="t s6_15">SDUD VH½DODU HQ HO SDGUµQ TXH HO HOHFWRU VXIUDJµ²</div>
+<div id="t1u_15" class="t s4_15">±</div>
+<div id="t1v_15" class="t s4_15">²</div>
+<div id="t1w_15" class="t s4_15">³</div>
+<div id="t1x_15" class="t s8_15">±</div>
+<div id="t1y_15" class="t s8_15">²</div>
+<div id="t1z_15" class="t s8_15">³</div>
+<div id="t20_15" class="t s8_15">´</div>
+<div id="t21_15" class="t s8_15">¶</div>
+<div id="t22_15" class="t s8_15">·</div>
+<div id="t23_15" class="t s8_15">¸</div>
+<div id="t24_15" class="t s2_15">"L4&amp;-)0"4+$"&amp;$/)6*+$"&amp;-":4)-6+"'&amp;4")6%)"*2/0&amp;$)5</div>
+<div id="t25_15" class="t s9_15">g</div>
+<div id="t26_15" class="t s2_15">]*02)0"&amp;4")6%)"J3-%+"6+-"&amp;4"$3/4&amp;-%&amp;"="4+$"?$6)4&amp;$"/0&amp;$&amp;-%&amp;$"&amp;-"&amp;$&amp;"2+2&amp;-%+&lt;"</div>
+<div id="t27_15" class="t s9_15">g"</div>
+<div id="t28_15" class="t s2_15">&gt;3*&amp;-&amp;$"'&amp;:&amp;09-")64)0)0"$3"?02)&lt;")-+%)0"$3"-@2&amp;0+"'&amp;"'+632&amp;-%+"="4)"4&amp;%0)"'&amp;"</div>
+<div id="t29_15" class="t s2_15">4)"4*$%)"'&amp;"/0&amp;6)-'*')%+$&lt;"&amp;-"&amp;4"6)$+"'&amp;"4)$"I!7U&lt;")$1"6+2+"&amp;4"-@2&amp;0+"="'&amp;-+2*E</div>
+<div id="t2a_15" class="t s2_15">-)6*8-"'&amp;"4)"),03/)6*8-"/+41%*6)"&gt;3&amp;"0&amp;/0&amp;$&amp;-%)-5</div>
+<div id="t2b_15" class="t s2_15">M-"6)$+"&gt;3&amp;"&amp;4"$3/4&amp;-%&amp;"+")4,@-"?$6)4"-+"&amp;$%R"/0&amp;$&amp;-%&amp;&lt;"-+"(3:*&amp;$&amp;-"?$6)4&amp;$"'&amp;E</div>
+<div id="t2c_15" class="t s9_15">g"</div>
+<div id="t2d_15" class="t s2_15">$*,-)'+$"+"$&amp;"-&amp;,)$&amp;-")"?02)0&lt;"'&amp;:&amp;"'&amp;J)0"6+-$%)-6*)"'&amp;"%)4"$*%3)6*8-"&amp;-"&amp;4"!6%)"</div>
+<div id="t2e_15" class="t s2_15">'&amp;"!/&amp;0%30)&lt;"?029-'+4)"J3-%+"6+-"'+$"&amp;4&amp;6%+0&amp;$5</div>
+<div id="t2f_15" class="t s2_15">M-"&amp;4"&amp;J&amp;2/4)0"'&amp;4"/)'08-"/)0)"&amp;4"I0&amp;$*'&amp;-%&amp;"&amp;-6+-%0)09O</div>
+<div id="t2g_15" class="t s2_15">M-"&amp;4"&amp;J&amp;2/4)0"'&amp;4"/)'08-"/)0)"&amp;4"[+6)4"&amp;-6+-%0)09O</div>
+<div id="t2h_15" class="t s10_15">6HFFLµQ ±</div>
+<div id="t2i_15" class="t s11_15">$3(5785$ &lt; '(6$552//2 '(/</div>
+<div id="t2j_15" class="t s11_15">$&amp;72 (/(&amp;725$/</div>
+<div id="t2k_15" class="t s12_15">(/(&amp;&amp;Ζ21(6 ´¸º»</div>
+<div id="t2l_15" class="t s13_15">0$18$/ (/(&amp;725$/ 3$5$ $8725Ζ'$'(6 '( 0(6$</div>
+<div id="t2m_15" class="t s14_15">CW</div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg15Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg15"><object width="909" height="1286" data="15/15.svg" type="image/svg+xml" id="pdf15" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld15" type="text/javascript">
+
+var isIE = false;
+var f15 = [['t1_15',1356],['t9_15',1372],['tb_15',431],['td_15',391],['tf_15',201],['tg_15',63],['ti_15',657],['tj_15',528],['tk_15',494],['tl_15',589],['tm_15',389],['tn_15',740],['to_15',635],['tp_15',642],['tq_15',279],['tr_15',828],['ts_15',845],['tt_15',725],['tu_15',553],['tv_15',564],['tw_15',745],['tx_15',1098],['ty_15',1258],['tz_15',243],['t10_15',246],['t11_15',913],['t12_15',1348],['t13_15',1047],['t1d_15',431],['t1f_15',391],['t1h_15',201],['t1i_15',63],['t1l_15',913],['t1m_15',528],['t1n_15',494],['t1o_15',589],['t1p_15',389],['t1q_15',740],['t1t_15',931],['t2h_15',477],['t2i_15',1369],['t2j_15',817],['t2k_15',412],['t2l_15',1281]];
+function load15(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f15);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 95;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_15");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+</body>
+</html>

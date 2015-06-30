@@ -1,0 +1,426 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0;">
+
+<div id="jpedal" style="overflow: hidden; position:relative; width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load41();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_41{left:113px;top:205px;}
+#t2_41{left:444px;top:319px;}
+#t3_41{left:444px;top:339px;}
+#t4_41{left:444px;top:359px;}
+#t5_41{left:444px;top:379px;}
+#t6_41{left:444px;top:399px;}
+#t7_41{left:444px;top:438px;}
+#t8_41{left:444px;top:458px;}
+#t9_41{left:444px;top:478px;}
+#ta_41{left:444px;top:517px;}
+#tb_41{left:444px;top:537px;}
+#tc_41{left:444px;top:557px;}
+#td_41{left:444px;top:596px;}
+#te_41{left:444px;top:616px;}
+#tf_41{left:444px;top:636px;}
+#tg_41{left:444px;top:656px;}
+#th_41{left:444px;top:695px;}
+#ti_41{left:444px;top:715px;}
+#tj_41{left:444px;top:735px;}
+#tk_41{left:444px;top:755px;}
+#tl_41{left:444px;top:794px;}
+#tm_41{left:444px;top:814px;}
+#tn_41{left:444px;top:834px;}
+#to_41{left:444px;top:873px;}
+#tp_41{left:444px;top:893px;}
+#tq_41{left:444px;top:913px;}
+#tr_41{left:444px;top:933px;}
+#ts_41{left:83px;top:250px;}
+#tt_41{left:83px;top:268px;}
+#tu_41{left:83px;top:305px;}
+#tv_41{left:83px;top:324px;}
+#tw_41{left:89px;top:324px;}
+#tx_41{left:83px;top:343px;}
+#ty_41{left:83px;top:380px;}
+#tz_41{left:92px;top:380px;}
+#t10_41{left:83px;top:398px;}
+#t11_41{left:83px;top:417px;}
+#t12_41{left:83px;top:435px;}
+#t13_41{left:83px;top:453px;}
+#t14_41{left:83px;top:471px;}
+#t15_41{left:83px;top:490px;}
+#t16_41{left:83px;top:508px;}
+#t17_41{left:83px;top:546px;}
+#t18_41{left:83px;top:565px;}
+#t19_41{left:89px;top:565px;}
+#t1a_41{left:83px;top:583px;}
+#t1b_41{left:83px;top:601px;}
+#t1c_41{left:83px;top:620px;}
+#t1d_41{left:83px;top:638px;}
+#t1e_41{left:83px;top:656px;}
+#t1f_41{left:83px;top:694px;}
+#t1g_41{left:92px;top:694px;}
+#t1h_41{left:83px;top:712px;}
+#t1i_41{left:83px;top:730px;}
+#t1j_41{left:83px;top:768px;}
+#t1k_41{left:89px;top:768px;}
+#t1l_41{left:83px;top:786px;}
+#t1m_41{left:83px;top:804px;}
+#t1n_41{left:83px;top:822px;}
+#t1o_41{left:83px;top:841px;}
+#t1p_41{left:83px;top:859px;}
+#t1q_41{left:83px;top:896px;}
+#t1r_41{left:89px;top:896px;}
+#t1s_41{left:83px;top:915px;}
+#t1t_41{left:83px;top:933px;}
+#t1u_41{left:83px;top:951px;}
+#t1v_41{left:83px;top:970px;}
+#t1w_41{left:83px;top:1007px;}
+#t1x_41{left:89px;top:1007px;}
+#t1y_41{left:83px;top:1025px;}
+#t1z_41{left:83px;top:1062px;}
+#t20_41{left:89px;top:1062px;}
+#t21_41{left:83px;top:1081px;}
+#t22_41{left:83px;top:1118px;}
+#t23_41{left:92px;top:1118px;}
+#t24_41{left:83px;top:1136px;}
+#t25_41{left:83px;top:1173px;}
+#t26_41{left:88px;top:1173px;}
+#t27_41{left:83px;top:1191px;}
+#t28_41{left:79px;top:57px;}
+#t29_41{left:726px;top:55px;}
+#t2a_41{left:83px;top:136px;}
+#t2b_41{left:82px;top:152px;}
+#t2c_41{left:386px;top:1252px;}
+#t2d_41{left:493px;top:1252px;}
+#t2e_41{left:833px;top:1251px;}
+
+.s12_41{
+	FONT-SIZE: 54px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Iden41;
+	color: rgb(77,74,75);
+}
+
+.s9_41{
+	FONT-SIZE: 122px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide41;
+	color: rgb(255,255,255);
+}
+
+.s2_41{
+	FONT-SIZE: 72px;
+	FONT-FAMILY: TPTFOY-Humanist521BT-Light-Id41;
+	color: rgb(255,255,255);
+}
+
+.s10_41{
+	FONT-SIZE: 50px;
+	FONT-FAMILY: TYFSDB-OpenSans-Light-Identit41;
+	color: rgb(77,74,75);
+}
+
+.s1_41{
+	FONT-SIZE: 97px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide41;
+	color: rgb(33,29,29);
+}
+
+.s11_41{
+	FONT-SIZE: 50px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide41;
+	color: rgb(77,74,75);
+}
+
+.s5_41{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Iden41;
+	color: rgb(168,64,151);
+}
+
+.s8_41{
+	FONT-SIZE: 68px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide41;
+	color: rgb(255,255,255);
+}
+
+.s6_41{
+	FONT-SIZE: 97px;
+	FONT-FAMILY: BQZQCD-Humanist521BT-Roman-Id41;
+	color: rgb(33,29,29);
+}
+
+.s7_41{
+	FONT-SIZE: 103px;
+	FONT-FAMILY: RLXZZY-OpenSans-Bold-Identity41;
+	color: rgb(255,255,255);
+}
+
+.s3_41{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Iden41;
+	color: rgb(33,29,29);
+}
+
+.s4_41{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ODLDAU-MyriadPro-Bold-Identit41;
+	color: rgb(168,64,151);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts41" type="text/css" >
+
+@font-face {
+	font-family: BQZQCD-Humanist521BT-Roman-Id41;
+	src :url("41/fonts/BQZQCD-Humanist521BT-Roman-Id.woff") format("woff");
+}
+
+@font-face {
+	font-family: TPTFOY-Humanist521BT-Light-Id41;
+	src :url("41/fonts/TPTFOY-Humanist521BT-Light-Id.woff") format("woff");
+}
+
+@font-face {
+	font-family: RLXZZY-OpenSans-Bold-Identity41;
+	src :url("41/fonts/RLXZZY-OpenSans-Bold-Identity.woff") format("woff");
+}
+
+@font-face {
+	font-family: CBLQMD-OpenSans-Extrabold-Ide41;
+	src :url("41/fonts/CBLQMD-OpenSans-Extrabold-Ide.woff") format("woff");
+}
+
+@font-face {
+	font-family: ODLDAU-MyriadPro-Bold-Identit41;
+	src :url("41/fonts/ODLDAU-MyriadPro-Bold-Identit.woff") format("woff");
+}
+
+@font-face {
+	font-family: STQLMZ-MyriadPro-Regular-Iden41;
+	src :url("41/fonts/STQLMZ-MyriadPro-Regular-Iden.woff") format("woff");
+}
+
+@font-face {
+	font-family: TYFSDB-OpenSans-Light-Identit41;
+	src :url("41/fonts/TYFSDB-OpenSans-Light-Identit.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_41" class="t s1_41">(UURUHV FRPXQHV HQ OD FRQIHFFLµQ GH OD GRFXPHQWDFLµQ</div>
+<div id="t2_41" class="t s2_41">± 6L DOJ~Q ÀVFDO VH DXVHQWD DQWHV GH OD FODXVXUD GHO</div>
+<div id="t3_41" class="t s2_41">DFWR HOHFWRUDO² GHEH GHMDU FRQVWDQFLD GHO PRPHQWR</div>
+<div id="t4_41" class="t s2_41">\ HO PRWLYR SRU HO TXH OR KDFH³ 6L VH QHJDUD² XVWHG</div>
+<div id="t5_41" class="t s2_41">GHEH KDFHU FRQVWDU HVD FLUFXQVWDQFLD UHTXLULHQGR</div>
+<div id="t6_41" class="t s2_41">OD ÀUPD GH RWUR ÀVFDO³</div>
+<div id="t7_41" class="t s2_41">± $QWHV GH FRPHQ]DU HO HVFUXWLQLR² GHEH JXDUGDU</div>
+<div id="t8_41" class="t s2_41">HQ HO VREUH PDUUyQ ODV EROHWDV \ VREUHV TXH QR</div>
+<div id="t9_41" class="t s2_41">IXHURQ XWLOL]DGRV³</div>
+<div id="ta_41" class="t s2_41">± &amp;XDQGR H[WUDLJD ODV EROHWDV GH ORV VREUHV² QR ORV</div>
+<div id="tb_41" class="t s2_41">GHVWUX\D³ 5HFXHUGH TXH² XQD YH] ÀQDOL]DGR HO HVFUX´</div>
+<div id="tc_41" class="t s2_41">WLQLR² GHEH FRORFDUORV GHQWUR GH OD XUQD³</div>
+<div id="td_41" class="t s2_41">± (Q HO PRPHQWR GH FDOFXODU ORV YRWRV HQ EODQFR</div>
+<div id="te_41" class="t s2_41">H[LVWHQWHV HQ FDGD FDWHJRUtD² GHEH UHVWDU DO WRWDO GH</div>
+<div id="tf_41" class="t s2_41">YRWRV HPLWLGRVµ ORV YRWRV DÀUPDWLYRV² QXORV² UHFXUUL´</div>
+<div id="tg_41" class="t s2_41">GRV \ GH LGHQWLGDG LPSXJQDGD³</div>
+<div id="th_41" class="t s2_41">± $QWHV GH RUGHQDU OD GRFXPHQWDFLyQ SDUD VX HQ´</div>
+<div id="ti_41" class="t s2_41">WUHJD² YHULÀTXH TXH ORV GDWRV UHJLVWUDGRV HQ HO $FWD</div>
+<div id="tj_41" class="t s2_41">GH (VFUXWLQLR² HO &amp;HUWLÀFDGR GH (VFUXWLQLR \ HO 7HOH´</div>
+<div id="tk_41" class="t s2_41">JUDPD VHDQ FRLQFLGHQWHV³</div>
+<div id="tl_41" class="t s2_41">± 6L DO PRPHQWR GHO HVFUXWLQLR UHDOL]D FiOFXORV HQ</div>
+<div id="tm_41" class="t s2_41">KRMDV ERUUDGRU² GHEH LQWURGXFLU ODV PLVPDV HQ HO</div>
+<div id="tn_41" class="t s2_41">VREUH EROVD PDUUyQ SDUD PDWHULDO VREUDQWH³</div>
+<div id="to_41" class="t s2_41">± (O VREUH SOiVWLFR GH GHYROXFLyQ GH DFWDV GHEH VHU</div>
+<div id="tp_41" class="t s2_41">FRPSOHWDGR FRQ ORV GDWRV UHTXHULGRV \ ÀUPDGR SRU</div>
+<div id="tq_41" class="t s2_41">ODV DXWRULGDGHV GH PHVD \ ORV ÀVFDOHV TXH DFWXDURQ</div>
+<div id="tr_41" class="t s2_41">HQ HOOD³</div>
+<div id="ts_41" class="t s3_41">M-"&amp;4&amp;66*+-&amp;$")-%&amp;0*+0&amp;$"$&amp;"()-"'&amp;%&amp;6%)'+"&amp;00+0&amp;$"6+23-&amp;$")4"2+2&amp;-%+"'&amp;"6+-B&amp;66*+-)0"4)"'+632&amp;-%)6*8-"</div>
+<div id="tt_41" class="t s3_41">&amp;4&amp;6%+0)45"M-%0&amp;"&amp;44+$O</div>
+<div id="tu_41" class="t s4_41">?&amp;*-,*1&amp;2-(52+;</div>
+<div id="tv_41" class="t s4_41">R</div>
+<div id="tw_41" class="t s3_41">"L)"6)-%*')'"'&amp;"/&amp;0$+-)$"&gt;3&amp;"6+-E</div>
+<div id="tx_41" class="t s3_41">6300*&amp;0+-")";+%)05</div>
+<div id="ty_41" class="t s4_41">R*</div>
+<div id="tz_41" class="t s3_41">L)"?02)"="4+$"')%+$"/&amp;0$+-)4&amp;$"</div>
+<div id="t10_41" class="t s3_41">S-+2:0&amp;&lt;")/&amp;44*'+"6+2/4&amp;%+"="'+63</div>
+<div id="t11_41" class="t s3_41">2&amp;-%+T"&amp;-"%+')"4)"'+632&amp;-%)6*8-&lt;"</div>
+<div id="t12_41" class="t s3_41">&amp;$/&amp;6*)42&amp;-%&amp;"&amp;-"&amp;4"^&amp;4&amp;,0)2)&lt;",&amp;E</div>
+<div id="t13_41" class="t s3_41">-&amp;0)-'+"'*?634%)'&amp;$"/)0)"4)"*'&amp;-%*?6)E</div>
+<div id="t14_41" class="t s3_41">6)6*8-"="/+$%&amp;0*+0"/),+"'&amp;"4)"6+2/&amp;-E</div>
+<div id="t15_41" class="t s3_41">$)6*8-"&amp;6+-82*6)")"4)$")3%+0*')'&amp;$"'&amp;"</div>
+<div id="t16_41" class="t s3_41">2&amp;$)5</div>
+<div id="t17_41" class="t s4_41">H,*',5(-%'+*,''=2,+.,2%,;</div>
+<div id="t18_41" class="t s4_41">R</div>
+<div id="t19_41" class="t s3_41">""L)"6)-%*')'"'&amp;";+%+$"6+00&amp;$/+-'*&amp;-E</div>
+<div id="t1a_41" class="t s3_41">%&amp;$")"3-)"),03/)6*8-"/+41%*6)"&amp;-"&amp;4"6)E</div>
+<div id="t1b_41" class="t s3_41">$*44&amp;0+"'&amp;$%*-)'+")"+%0)5</div>
+<div id="t1c_41" class="t s3_41">M-"+6)$*+-&amp;$&lt;"&amp;$%&amp;"&amp;00+0"$&amp;"0&amp;*%&amp;0)")$*,E"</div>
+<div id="t1d_41" class="t s3_41">-)-'+")"%+')$"4)$"6)%&amp;,+01)$&lt;"4+$";+%+$"</div>
+<div id="t1e_41" class="t s3_41">6+00&amp;$/+-'*&amp;-%&amp;$")"+%0)"),03/)6*8-5</div>
+<div id="t1f_41" class="t s4_41">R*</div>
+<div id="t1g_41" class="t s3_41">"L)"6)-%*')'"'&amp;";+%+$"6+00&amp;$/+-'*&amp;-E</div>
+<div id="t1h_41" class="t s3_41">)"3-)"6)%&amp;,+01)"&amp;-"&amp;4"6)$*44&amp;0+"'&amp;$%*-)</div>
+<div id="t1i_41" class="t s3_41">'+")"+%0)"6)%&amp;,+01)"'&amp;"6)0,+$")"&amp;4&amp;,*05</div>
+<div id="t1j_41" class="t s4_41">R</div>
+<div id="t1k_41" class="t s3_41">""b-B+02)6*8-"&amp;-"4+$"6)$*44&amp;0+$"*-():*E</div>
+<div id="t1l_41" class="t s3_41">4*%)'+$&lt;"&amp;$"'&amp;6*0"&amp;-"6)%&amp;,+01)$"'+-'&amp;"</div>
+<div id="t1m_41" class="t s3_41">3-)"),03/)6*8-"/+41%*6)"-+"/0&amp;$&amp;-%)"</div>
+<div id="t1n_41" class="t s3_41">6)-'*')%+$&lt;"'&amp;J)-'+"$*-"6+2/3%)0"4+$"</div>
+<div id="t1o_41" class="t s3_41">;+%+$"&gt;3&amp;"&amp;-"&amp;$)"6)%&amp;,+01)"+:%3;+""</div>
+<div id="t1p_41" class="t s3_41">&amp;B&amp;6%*;)2&amp;-%&amp;"+%0)"),03/)6*8-"/+41%*6)5</div>
+<div id="t1q_41" class="t s4_41">R</div>
+<div id="t1r_41" class="t s3_41">""L)"6)-%*')'"'&amp;";+%+$"'&amp;"*'&amp;-%*')'"</div>
+<div id="t1s_41" class="t s3_41">*2/3,-)')"$84+"/)0)")4,3-)"+")4,3-)$</div>
+<div id="t1t_41" class="t s3_41">-)$"'&amp;"4)$"6)%&amp;,+01)$&lt;"63)-'+"&amp;$%)"6*B0)"</div>
+<div id="t1u_41" class="t s3_41">'&amp;:&amp;"0&amp;/&amp;%*0$&amp;"&amp;-"%+')$"4)$"6)%&amp;,+01)$"</div>
+<div id="t1v_41" class="t s3_41">'&amp;"6)0,+$5</div>
+<div id="t1w_41" class="t s4_41">R</div>
+<div id="t1x_41" class="t s3_41">""L)"2*$2)"6)-%*')'"'&amp;";+%+$"0&amp;6300*'+$"/)0)"%+')$"4)$"6)%&amp;,+01)$&lt;"63)-'+"&amp;$%&amp;"-@2&amp;0+"$&amp;"'&amp;?-&amp;"/)0)"6)')</div>
+<div id="t1y_41" class="t s3_41">6)%&amp;,+01)"="&amp;-"6+-$&amp;63&amp;-6*)&lt;"/3&amp;'&amp;";)0*)05</div>
+<div id="t1z_41" class="t s4_41">R</div>
+<div id="t20_41" class="t s3_41">""L)"6)-%*')'"'&amp;";+%+$"%+%)4&amp;$"/+0"6+432-)&lt;")$*,-)-'+"6)-%*')'&amp;$"'*$%*-%)$"/+0"6)%&amp;,+01)$"63)-'+"%+')$"'&amp;E</div>
+<div id="t21_41" class="t s3_41">:&amp;-"$&amp;0"6+*-6*'&amp;-%&amp;$"6+-"4)"6)-%*')'"'&amp;";+%+$"&amp;2*%*'+$"S+"$+:0&amp;$"3%*4*H)'+$T5</div>
+<div id="t22_41" class="t s4_41">R*</div>
+<div id="t23_41" class="t s3_41">b-B+02)6*8-")4"'+0$+"'&amp;"4)"'+632&amp;-%)6*8-"&amp;4&amp;6%+0)4&lt;"&amp;-";&amp;H"'&amp;")$&amp;-%)04)"&amp;-"3-")6%)"6+2/4&amp;2&amp;-%)0*)"&gt;3&amp;"'&amp;E"</div>
+<div id="t24_41" class="t s3_41">:&amp;"&amp;4):+0)0$&amp;"&amp;-"4)$"(+J)$"&amp;-":4)-6+"'&amp;"6)096%&amp;0"+?6*)4"/0+;*$%)$"&amp;$/&amp;6*)42&amp;-%&amp;"/)0)"&amp;44+5</div>
+<div id="t25_41" class="t s5_41">g</div>
+<div id="t26_41" class="t s3_41">"L)"*-B+02)6*8-"0&amp;&gt;3&amp;0*')"&amp;-"4)"'+632&amp;-%)6*8-"6+-"-@2&amp;0+$"/+6+"4&amp;,*:4&amp;$"+"&gt;3&amp;"/3&amp;'&amp;-"$&amp;0"*-%&amp;0/0&amp;%)'+$"</div>
+<div id="t27_41" class="t s3_41">&amp;008-&amp;)2&amp;-%&amp;5</div>
+<div id="t28_41" class="t s6_41">&amp;21)(&amp;&amp;,Ð1 '( /$ '2&amp;80(17$&amp;,Ð1</div>
+<div id="t29_41" class="t s7_41">6HFFLµQ ±</div>
+<div id="t2a_41" class="t s8_41">(OHFFLRQHV</div>
+<div id="t2b_41" class="t s9_41">*(1(5$/(6</div>
+<div id="t2c_41" class="t s10_41">(/(&amp;&amp;Ζ21(6 ±²³´</div>
+<div id="t2d_41" class="t s11_41">0$18$/ (/(&amp;725$/ 3$5$ $8725Ζ'$'(6 '( 0(6$</div>
+<div id="t2e_41" class="t s12_41">PC</div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg41Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg41"><object width="909" height="1286" data="41/41.svg" type="image/svg+xml" id="pdf41" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld41" type="text/javascript">
+
+var isIE = false;
+var f41 = [['t1_41',2762],['t2_41',1377],['t3_41',1407],['t4_41',1385],['t5_41',1349],['t6_41',594],['t7_41',1359],['t8_41',1307],['t9_41',471],['ta_41',1408],['tb_41',1445],['tc_41',1110],['td_41',1359],['te_41',1412],['tf_41',1434],['tg_41',845],['th_41',1384],['ti_41',1410],['tj_41',1409],['tk_41',693],['tl_41',1365],['tm_41',1332],['tn_41',1201],['to_41',1422],['tp_41',1432],['tq_41',1395],['tr_41',197],['t28_41',1805],['t29_41',477],['t2c_41',412],['t2d_41',1281]];
+function load41(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f41);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 87;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_41");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0;">
+
+<div id="jpedal" style="overflow: hidden; position:relative; width: 909px; height: 1286px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load27();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_27{left:93px;top:421px;}
+#t2_27{left:213px;top:421px;}
+#t3_27{left:83px;top:441px;}
+#t4_27{left:83px;top:461px;}
+#t5_27{left:83px;top:809px;}
+#t6_27{left:329px;top:809px;}
+#t7_27{left:83px;top:829px;}
+#t8_27{left:83px;top:850px;}
+#t9_27{left:490px;top:850px;}
+#ta_27{left:83px;top:870px;}
+#tb_27{left:83px;top:890px;}
+#tc_27{left:83px;top:344px;}
+#td_27{left:83px;top:364px;}
+#te_27{left:508px;top:303px;}
+#tf_27{left:508px;top:323px;}
+#tg_27{left:616px;top:243px;}
+#th_27{left:616px;top:263px;}
+#ti_27{left:616px;top:283px;}
+#tj_27{left:656px;top:224px;}
+#tk_27{left:83px;top:54px;}
+#tl_27{left:83px;top:83px;}
+#tm_27{left:727px;top:55px;}
+#tn_27{left:498px;top:551px;}
+#to_27{left:492px;top:551px;}
+#tp_27{left:492px;top:571px;}
+#tq_27{left:501px;top:612px;}
+#tr_27{left:492px;top:612px;}
+#ts_27{left:492px;top:632px;}
+#tt_27{left:492px;top:652px;}
+#tu_27{left:492px;top:673px;}
+#tv_27{left:498px;top:714px;}
+#tw_27{left:492px;top:714px;}
+#tx_27{left:492px;top:734px;}
+#ty_27{left:84px;top:136px;}
+#tz_27{left:82px;top:152px;}
+#t10_27{left:386px;top:1252px;}
+#t11_27{left:493px;top:1252px;}
+#t12_27{left:833px;top:1251px;}
+
+.s1_27{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ODLDAU-MyriadPro-Bold-Identit27;
+	color: rgb(236,11,140);
+}
+
+.s10_27{
+	FONT-SIZE: 54px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Iden27;
+	color: rgb(77,74,75);
+}
+
+.s3_27{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ODLDAU-MyriadPro-Bold-Identit27;
+	color: rgb(33,29,29);
+}
+
+.s8_27{
+	FONT-SIZE: 50px;
+	FONT-FAMILY: TYFSDB-OpenSans-Light-Identit27;
+	color: rgb(77,74,75);
+}
+
+.s6_27{
+	FONT-SIZE: 68px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide27;
+	color: rgb(255,255,255);
+}
+
+.s4_27{
+	FONT-SIZE: 97px;
+	FONT-FAMILY: BQZQCD-Humanist521BT-Roman-Id27;
+	color: rgb(33,29,29);
+}
+
+.s2_27{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: STQLMZ-MyriadPro-Regular-Iden27;
+	color: rgb(33,29,29);
+}
+
+.s9_27{
+	FONT-SIZE: 50px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide27;
+	color: rgb(77,74,75);
+}
+
+.s7_27{
+	FONT-SIZE: 122px;
+	FONT-FAMILY: CBLQMD-OpenSans-Extrabold-Ide27;
+	color: rgb(255,255,255);
+}
+
+.s5_27{
+	FONT-SIZE: 103px;
+	FONT-FAMILY: RLXZZY-OpenSans-Bold-Identity27;
+	color: rgb(255,255,255);
+}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts27" type="text/css" >
+
+@font-face {
+	font-family: BQZQCD-Humanist521BT-Roman-Id27;
+	src :url("27/fonts/BQZQCD-Humanist521BT-Roman-Id.woff") format("woff");
+}
+
+@font-face {
+	font-family: RLXZZY-OpenSans-Bold-Identity27;
+	src :url("27/fonts/RLXZZY-OpenSans-Bold-Identity.woff") format("woff");
+}
+
+@font-face {
+	font-family: CBLQMD-OpenSans-Extrabold-Ide27;
+	src :url("27/fonts/CBLQMD-OpenSans-Extrabold-Ide.woff") format("woff");
+}
+
+@font-face {
+	font-family: STQLMZ-MyriadPro-Regular-Iden27;
+	src :url("27/fonts/STQLMZ-MyriadPro-Regular-Iden.woff") format("woff");
+}
+
+@font-face {
+	font-family: ODLDAU-MyriadPro-Bold-Identit27;
+	src :url("27/fonts/ODLDAU-MyriadPro-Bold-Identit.woff") format("woff");
+}
+
+@font-face {
+	font-family: TYFSDB-OpenSans-Light-Identit27;
+	src :url("27/fonts/TYFSDB-OpenSans-Light-Identit.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_27" class="t s1_27">b*g&amp;%&amp;*',1$''()&amp;;</div>
+<div id="t2_27" class="t s2_27">""M$")&gt;3&amp;4"63=)";)4*'&amp;H"+"-34*')'"$&amp;)"63&amp;$%*+-)')"&amp;-"&amp;4"2+2&amp;-%+"'&amp;4"&amp;$603%*-*+"'&amp;"2&amp;$)""</div>
+<div id="t3_27" class="t s2_27">/+0"3-+"+"29$"?$6)4&amp;$&lt;"&gt;3*&amp;-&amp;$"'&amp;:&amp;-"B3-')2&amp;-%)0"$3"$+4*6*%3'"6+-"3-)"&amp;K/0&amp;$*8-"6+-60&amp;%)"'&amp;"4)$"6)3$)$5</div>
+<div id="t4_27" class="t s2_27">M-"&amp;$%&amp;"6)$+&lt;"$&amp;"/0+6&amp;'&amp;"'&amp;"4)"$*,3*&amp;-%&amp;"2)-&amp;0)O</div>
+<div id="t5_27" class="t s1_27">Db*g&amp;%&amp;*),*(),2%()+)*(.C$52+)+;</div>
+<div id="t6_27" class="t s2_27">""M$"3-";+%+"$+:0&amp;"&amp;4"63)4"3$%&amp;'&lt;"$3"$3/4&amp;-%&amp;"=".+"4+$"?$6)4&amp;$"6+-$*'&amp;0)-"&gt;3&amp;"</div>
+<div id="t7_27" class="t s2_27">&amp;4";+%)-%&amp;"-+"&amp;$"&amp;4"%*%34)0"'&amp;4"'+632&amp;-%+"61;*6+"&gt;3&amp;"/0&amp;$&amp;-%)5</div>
+<div id="t8_27" class="t s3_27">F+*(.C$52+1(=2*-,*',+0(^+*+2%,-*),*,.(%('-,*,0*-$]'+5(&amp;</div>
+<div id="t9_27" class="t s2_27">5"L+$"$+:0&amp;$"6+-"4+$";+%+"'&amp;"*'&amp;-%*')'"*2/3,E</div>
+<div id="ta_27" class="t s2_27">-)')"$&amp;"6+4+6)09-"&amp;-"4)"30-)"J3-%+"6+-"&amp;4"0&amp;$%+"'&amp;"4+$";+%+$&lt;"/&amp;0+"-+"$&amp;09-"):*&amp;0%+$"'30)-%&amp;"&amp;4"&amp;$603%*-*+"</div>
+<div id="tb_27" class="t s2_27">'&amp;"2&amp;$)5"7&amp;"0&amp;2*%&amp;-")"4)"`3-%)"M4&amp;6%+0)4"G)6*+-)4"5</div>
+<div id="tc_27" class="t s2_27">"""""""7&amp;"&amp;4*,&amp;-"/)0)"3-)"2*$2)"6)%&amp;,+01)"'&amp;"6)0,+$"</div>
+<div id="td_27" class="t s2_27">:+4&amp;%)$"'&amp;"'*$%*-%)$"),03/)6*+-&amp;$"/+41%*6)$5</div>
+<div id="te_27" class="t s2_27">0)"+"%)6()'30)"&amp;4"-+2:0&amp;"="&amp;4"-@2&amp;0+"'&amp;"4)"),03E</div>
+<div id="tf_27" class="t s2_27">/)6*8-"/+41%*6)"="4)"6)%&amp;,+01)")"&amp;4&amp;,*05"</div>
+<div id="tg_27" class="t s2_27">+?6*)4*H)')"&gt;3&amp;"/+0"'&amp;$%0366*8-</div>
+<div id="th_27" class="t s2_27">/)06*)4&lt;"'&amp;B&amp;6%+"+"%)6()'30)$"-+</div>
+<div id="ti_27" class="t s2_27">6+-%&amp;-,)"/+0"4+"2&amp;-+$"$*-"0+%3E</div>
+<div id="tj_27" class="t s2_27">7&amp;"&amp;2*%&amp;"2&amp;'*)-%&amp;":+4&amp;%)""</div>
+<div id="tk_27" class="t s4_27">&amp;/$8685$ '(/ $&amp;72 (/(&amp;725$/ &lt;</div>
+<div id="tl_27" class="t s4_27">(6&amp;587,1,2 '( /$ 0(6$</div>
+<div id="tm_27" class="t s5_27">6HFFLµQ ±</div>
+<div id="tn_27" class="t s2_27">"M4"+"4+$"?$6)4&amp;$"'&amp;:&amp;09-"B3-')2&amp;-%)0"$3"/&amp;'*'+"</div>
+<div id="to_27" class="t s1_27">R</div>
+<div id="tp_27" class="t s2_27">6+-"3-)"h&amp;K/0&amp;$*8-"6+-60&amp;%)"'&amp;"4)"6)3$)i5</div>
+<div id="tq_27" class="t s2_27">!$&amp;-%)09-"%)4&amp;$"2+%*;+$"&amp;-"3-"B+0234)0*+"&amp;$/&amp;6*)4"</div>
+<div id="tr_27" class="t s1_27">R*</div>
+<div id="ts_27" class="t s2_27">/0+;*$%+"/+0"4)"`3-%)"M4&amp;6%+0)4"G)6*+-)4&lt;"&gt;3&amp;"'&amp;:&amp;E</div>
+<div id="tt_27" class="t s2_27">09"$&amp;0"?02)'+"/+0"&amp;4"+"4+$"?$6)4&amp;$"0&amp;6300&amp;-%&amp;$&lt;"</div>
+<div id="tu_27" class="t s2_27">6+-$*,-)-'+"$3$"')%+$5</div>
+<div id="tv_27" class="t s2_27">"N*6(+"B+0234)0*+"$&amp;")'J3-%)09")"4)":+4&amp;%)"=")4"$+E</div>
+<div id="tw_27" class="t s1_27">R</div>
+<div id="tx_27" class="t s2_27">$+:0&amp;"0&amp;$/&amp;6%*;+5</div>
+<div id="ty_27" class="t s6_27">(OHFFLRQHV</div>
+<div id="tz_27" class="t s7_27">*(1(5$/(6</div>
+<div id="t10_27" class="t s8_27">(/(&amp;&amp;Ζ21(6 ±²³´</div>
+<div id="t11_27" class="t s9_27">0$18$/ (/(&amp;725$/ 3$5$ $8725Ζ'$'(6 '( 0(6$</div>
+<div id="t12_27" class="t s10_27">cY</div>
+
+<!-- End text definitions -->
+
+<!-- Begin page background -->
+<div id="pg27Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg27"><object width="909" height="1286" data="27/27.svg" type="image/svg+xml" id="pdf27" style="width:909px; height:1286px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld27" type="text/javascript">
+
+var isIE = false;
+var f27 = [['tk_27',1603],['tl_27',1103],['tm_27',477],['t10_27',412],['t11_27',1281]];
+function load27(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f27);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 39;
+for (var i = 1; i < divCount; i++) {
+	var div = document.getElementById("t" + i.toString(36) + "_27");
+	div.style.top = (div.offsetTop * 4) + "px";
+	div.style.left = (div.offsetLeft * 4) + "px";
+	div.style.zoom = "25%";}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+</body>
+</html>
